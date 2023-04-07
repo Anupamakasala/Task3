@@ -98,7 +98,7 @@ namespace AdvanceTask_NUnit.Pages
                                     string finishDate, string starttime, string endtime, string skilltrade, string skilltags, string charge,
                                     string active)
         {
-            Wait_Helpers.WaiToExist(driver,"XPath", "//a[@class='ui basic green button']", 10);
+            Wait_Helpers.WaiToExist(driver, "XPath", "//a[@class='ui basic green button']", 10);
             shareSkillButton.Click();
             Thread.Sleep(2000);
             titleTextbox.Click();
@@ -215,17 +215,23 @@ namespace AdvanceTask_NUnit.Pages
             autoIt.Send(@"C:\Lemon.jpg");
             Thread.Sleep(2000);
             autoIt.Send("{ENTER}");
-            Wait_Helpers.WaiToExist(driver,"XPath", "//input[@type='button'and@value='Save']", 5);
+            Wait_Helpers.WaiToExist(driver, "XPath", "//input[@type='button'and@value='Save']", 5);
             save.Click();
-
-            Wait_Helpers.WaiToExist(driver, "XPath", "//a[@href='/Home/ListingManagement']", 10);
-            manageListingLink.Click();
-            Wait_Helpers.WaiToExist(driver, "XPath", "//div[2]/div[1]/div[1]/table/tbody/tr[1]/td[3]", 10);
-            var listadded = listTitle.Text;
-            Assert.That(listadded == "Ballet Dancer", "Listing not found");
-
         }
-        
+
+           
+            public string GetManageListing()
+            {
+                Wait_Helpers.WaiToExist(driver, "XPath", "//a[@href='/Home/ListingManagement']", 10);
+                manageListingLink.Click();
+                Wait_Helpers.WaiToExist(driver, "XPath", "//div[2]/div[1]/div[1]/table/tbody/tr[1]/td[3]", 10);
+                return listTitle.Text;
+                
+
+            }
 
     }
+        
+
+    
 }

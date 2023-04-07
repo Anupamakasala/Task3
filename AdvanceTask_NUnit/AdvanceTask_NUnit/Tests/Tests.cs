@@ -30,7 +30,28 @@ namespace AdvanceTask_NUnit.Tests
                 ExcelUtil.ReadData(1, "daysAvaialable"), ExcelUtil.ReadData(1, "beginDate"), ExcelUtil.ReadData(1, "finishDate"), ExcelUtil.ReadData(1, "starttime"),
                 ExcelUtil.ReadData(1, "endtime"), ExcelUtil.ReadData(1, "skilltrade"), ExcelUtil.ReadData(1, "skilltags"), ExcelUtil.ReadData(1, "charge"),
                 ExcelUtil.ReadData(1, "active"));
+            string shareskillTest = shareSkillObj.GetManageListing();
+            Assert.That(shareskillTest == "Ballet Dancer", "Listing not found");
+
             //test.Log(Status.Pass, "New Service Listing added");
+
+        }
+
+        [Test, Order(3)]
+        public void CEditManageListing()
+        {
+            //test = extent.CreateTest("CEditManageListing");
+            ManageListing manageListingObj = new ManageListing();
+
+            ExcelUtil.PopulateInCollection(@"C:\IndustryConnect\AdvancedTask\Task3\AdvanceTask_NUnit\AdvanceTask_NUnit\TestData\TestData.xlsx", "ManageListing");
+            manageListingObj.EditListing(ExcelUtil.ReadData(1, "title"), ExcelUtil.ReadData(1, "description"), ExcelUtil.ReadData(1, "addtags"), ExcelUtil.ReadData(1, "skilltrade"),
+                                          ExcelUtil.ReadData(1, "skilltags"), ExcelUtil.ReadData(1, "charge"));
+            string editmanagelisitngtest = manageListingObj.GetEditedManageListing();
+                        
+            Assert.That(editmanagelisitngtest == "All ages Ballet Dancer", "Service listing not updated");
+
+
+            //test.Log(Status.Pass, "Edited service listing");
 
         }
 
