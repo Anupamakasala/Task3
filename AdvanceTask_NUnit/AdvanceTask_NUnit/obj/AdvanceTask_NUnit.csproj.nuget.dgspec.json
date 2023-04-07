@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Advanced_Tasks\\Task3\\AdvanceTask_NUnit\\AdvanceTask_NUnit\\AdvanceTask_NUnit.csproj": {}
+    "C:\\IndustryConnect\\AdvancedTask\\Task3\\AdvanceTask_NUnit\\AdvanceTask_NUnit\\AdvanceTask_NUnit.csproj": {}
   },
   "projects": {
-    "D:\\Advanced_Tasks\\Task3\\AdvanceTask_NUnit\\AdvanceTask_NUnit\\AdvanceTask_NUnit.csproj": {
+    "C:\\IndustryConnect\\AdvancedTask\\Task3\\AdvanceTask_NUnit\\AdvanceTask_NUnit\\AdvanceTask_NUnit.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Advanced_Tasks\\Task3\\AdvanceTask_NUnit\\AdvanceTask_NUnit\\AdvanceTask_NUnit.csproj",
+        "projectUniqueName": "C:\\IndustryConnect\\AdvancedTask\\Task3\\AdvanceTask_NUnit\\AdvanceTask_NUnit\\AdvanceTask_NUnit.csproj",
         "projectName": "AdvanceTask_NUnit",
-        "projectPath": "D:\\Advanced_Tasks\\Task3\\AdvanceTask_NUnit\\AdvanceTask_NUnit\\AdvanceTask_NUnit.csproj",
-        "packagesPath": "C:\\Users\\Pooja\\.nuget\\packages\\",
-        "outputPath": "D:\\Advanced_Tasks\\Task3\\AdvanceTask_NUnit\\AdvanceTask_NUnit\\obj\\",
+        "projectPath": "C:\\IndustryConnect\\AdvancedTask\\Task3\\AdvanceTask_NUnit\\AdvanceTask_NUnit\\AdvanceTask_NUnit.csproj",
+        "packagesPath": "C:\\Users\\Dell Latitude\\.nuget\\packages\\",
+        "outputPath": "C:\\IndustryConnect\\AdvancedTask\\Task3\\AdvanceTask_NUnit\\AdvanceTask_NUnit\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Pooja\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Dell Latitude\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -105,8 +105,7 @@
             "net47",
             "net471",
             "net472",
-            "net48",
-            "net481"
+            "net48"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -115,7 +114,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.200\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.302\\RuntimeIdentifierGraph.json"
         }
       }
     }
