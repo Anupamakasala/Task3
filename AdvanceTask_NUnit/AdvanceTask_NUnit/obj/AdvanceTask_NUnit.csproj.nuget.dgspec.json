@@ -40,6 +40,14 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "AutoItX.Dotnet": {
+              "target": "Package",
+              "version": "[3.3.14.5, )"
+            },
+            "AutoItX3.Net": {
+              "target": "Package",
+              "version": "[3.3.16.1, )"
+            },
             "DotNetSeleniumExtras.PageObjects": {
               "target": "Package",
               "version": "[3.11.0, )"

@@ -2,6 +2,21 @@
   "version": 3,
   "targets": {
     "net6.0": {
+      "AutoItX.Dotnet/3.3.14.5": {
+        "type": "package",
+        "build": {
+          "build/AutoItX.Dotnet.targets": {}
+        }
+      },
+      "AutoItX3.Net/3.3.16.1": {
+        "type": "package",
+        "compile": {
+          "lib/AutoItX3.Assembly.dll": {}
+        },
+        "runtime": {
+          "lib/AutoItX3.Assembly.dll": {}
+        }
+      },
       "DnsClient/1.2.0": {
         "type": "package",
         "dependencies": {
@@ -3301,6 +3316,38 @@
     }
   },
   "libraries": {
+    "AutoItX.Dotnet/3.3.14.5": {
+      "sha512": "pobGb0PovHfJLH6tC2wsmafuZSI3u9ThqyHBebipVm9I/eDjzXZ6E6O84vUpE48lwTxPmtPm2HN/1tq0aLbM0Q==",
+      "type": "package",
+      "path": "autoitx.dotnet/3.3.14.5",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "autoitx.dotnet.3.3.14.5.nupkg.sha512",
+        "autoitx.dotnet.nuspec",
+        "build/AutoItX.Dotnet.targets",
+        "build/AutoItX3.dll",
+        "build/AutoItX3_x64.dll",
+        "lib/AutoItX3.Assembly.dll",
+        "lib/AutoItX3.Assembly.xml"
+      ]
+    },
+    "AutoItX3.Net/3.3.16.1": {
+      "sha512": "SqseHECRIugFZU6mP+7xMmHG81lHx1+fGKsgLbzttdQ67l2RqFNOS6RKJWX/QraCCZHKBgXaaN8cyau/4ApK0g==",
+      "type": "package",
+      "path": "autoitx3.net/3.3.16.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "autoitx3.net.3.3.16.1.nupkg.sha512",
+        "autoitx3.net.nuspec",
+        "build/AutoIt3.Net.targets",
+        "build/AutoItX3.dll",
+        "build/AutoItX3_x64.dll",
+        "lib/AutoItX3.Assembly.dll",
+        "lib/AutoItX3.Assembly.xml"
+      ]
+    },
     "DnsClient/1.2.0": {
       "sha512": "P34wUkeqU4FoQiOMV8OjpdeDZKs4d3r+VlHuKJ6eO5feiZgna3+9MF5orHRUn3DAv1g/HPE5hlkGucmxmsFfBw==",
       "type": "package",
@@ -9926,6 +9973,8 @@
   },
   "projectFileDependencyGroups": {
     "net6.0": [
+      "AutoItX.Dotnet >= 3.3.14.5",
+      "AutoItX3.Net >= 3.3.16.1",
       "DotNetSeleniumExtras.PageObjects >= 3.11.0",
       "DotNetSeleniumExtras.PageObjects.Core >= 4.3.0",
       "DotNetSeleniumExtras.WaitHelpers >= 3.11.0",
@@ -9981,6 +10030,14 @@
       "net6.0": {
         "targetAlias": "net6.0",
         "dependencies": {
+          "AutoItX.Dotnet": {
+            "target": "Package",
+            "version": "[3.3.14.5, )"
+          },
+          "AutoItX3.Net": {
+            "target": "Package",
+            "version": "[3.3.16.1, )"
+          },
           "DotNetSeleniumExtras.PageObjects": {
             "target": "Package",
             "version": "[3.11.0, )"
@@ -10058,5 +10115,17 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.302\\RuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'AutoItX3.Net 3.3.16.1' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework 'net6.0'. This package may not be fully compatible with your project.",
+      "libraryId": "AutoItX3.Net",
+      "targetGraphs": [
+        "net6.0"
+      ]
+    }
+  ]
 }
