@@ -1,0 +1,5 @@
+D:\Advanced_Tasks\Task3\AdvanceTask_NUnit\AdvanceTask_NUnit\obj\Debug\net6.0\AdvanceTask_NUnit.csproj.AssemblyReference.cache
+D:\Advanced_Tasks\Task3\AdvanceTask_NUnit\AdvanceTask_NUnit\obj\Debug\net6.0\AdvanceTask_NUnit.GeneratedMSBuildEditorConfig.editorconfig
+D:\Advanced_Tasks\Task3\AdvanceTask_NUnit\AdvanceTask_NUnit\obj\Debug\net6.0\AdvanceTask_NUnit.AssemblyInfoInputs.cache
+D:\Advanced_Tasks\Task3\AdvanceTask_NUnit\AdvanceTask_NUnit\obj\Debug\net6.0\AdvanceTask_NUnit.AssemblyInfo.cs
+D:\Advanced_Tasks\Task3\AdvanceTask_NUnit\AdvanceTask_NUnit\obj\Debug\net6.0\AdvanceTask_NUnit.csproj.CoreCompileInputs.cache
