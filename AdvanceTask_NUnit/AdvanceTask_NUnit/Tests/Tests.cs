@@ -55,5 +55,29 @@ namespace AdvanceTask_NUnit.Tests
 
         }
 
+       
+        [Test, Order(4)]
+        public void MarkAsRead()
+        {
+            ExcelUtil.PopulateInCollection(@"C:\IndustryConnect\AdvancedTask\Task3\AdvanceTask_NUnit\AdvanceTask_NUnit\TestData\TestData.xlsx", "SignIn");
+            LoginPage loginObj = new LoginPage(ExcelUtil.ReadData(1, "Username"), ExcelUtil.ReadData(1, "Password"));
+            Notifications notificationObj = new Notifications();
+            string testResult = notificationObj.MarkAsRead();
+            Assert.That(testResult == "400", "Test failed");
+
+        }
+
+        [Test, Order(5)]
+        public void DeleteNotification()
+        {
+            ExcelUtil.PopulateInCollection(@"C:\IndustryConnect\AdvancedTask\Task3\AdvanceTask_NUnit\AdvanceTask_NUnit\TestData\TestData.xlsx", "SignIn");
+            LoginPage loginObj = new LoginPage(ExcelUtil.ReadData(1, "Username"), ExcelUtil.ReadData(1, "Password"));
+            Notifications notificationObj = new Notifications();
+            string deletenotificationText = notificationObj.DeleteNotification();
+            Assert.That(deletenotificationText == "You have no notifications", "Test failed");
+        }
+
+
+
     }
 }

@@ -64,9 +64,9 @@ namespace AdvanceTask_NUnit.Pages
 
         public void EditListing(string title, string description, string addtags, string skilltrade, string skilltags, string charge)
         {
-            Wait_Helpers.WaiToExist(driver, "XPath", "//a[@href='/Home/ListingManagement']", 10);
+            Wait_Helpers.WaitToExist(driver, "XPath", "//a[@href='/Home/ListingManagement']", 10);
             manageListingLink.Click();
-            Wait_Helpers.WaiToExist(driver, "XPath", "//i[@class='outline write icon']", 10);
+            Wait_Helpers.WaitToExist(driver, "XPath", "//i[@class='outline write icon']", 10);
             writeIcon.Click();
             Thread.Sleep(2000);
             titleTextbox.Clear();
@@ -95,7 +95,7 @@ namespace AdvanceTask_NUnit.Pages
         public string GetEditedManageListing()
         {
 
-            Wait_Helpers.WaiToExist(driver, "XPath", "//div[2]/div[1]/div[1]/table/tbody/tr/td[3]", 10);
+            Wait_Helpers.WaitToExist(driver, "XPath", "//div[2]/div[1]/div[1]/table/tbody/tr/td[3]", 10);
             var manageLisitngTitle = driver.FindElement(By.XPath("//div[2]/div[1]/div[1]/table/tbody/tr/td[3]"));
             return manageLisitngTitle.Text;
             
@@ -105,5 +105,5 @@ namespace AdvanceTask_NUnit.Pages
 
     }
 
-    }
+    
 }
