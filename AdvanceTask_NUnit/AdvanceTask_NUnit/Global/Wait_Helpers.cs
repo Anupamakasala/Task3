@@ -67,7 +67,7 @@ namespace AdvanceTask_NUnit.Global
 
         }
 
-        public static void WaiToExist(IWebDriver driver, string locator, string locatorValue, int seconds)
+        public static void WaitToExist(IWebDriver driver, string locator, string locatorValue, int seconds)
         {
             var wait = new WebDriverWait(driver, new TimeSpan(0, 0, seconds));
 

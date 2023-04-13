@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\shiri\\Source\\Repos\\Task3\\AdvanceTask_NUnit\\AdvanceTask_NUnit\\AdvanceTask_NUnit.csproj": {}
+    "C:\\IndustryConnect\\AdvancedTask\\Task3\\AdvanceTask_NUnit\\AdvanceTask_NUnit\\AdvanceTask_NUnit.csproj": {}
   },
   "projects": {
-    "C:\\Users\\shiri\\Source\\Repos\\Task3\\AdvanceTask_NUnit\\AdvanceTask_NUnit\\AdvanceTask_NUnit.csproj": {
+    "C:\\IndustryConnect\\AdvancedTask\\Task3\\AdvanceTask_NUnit\\AdvanceTask_NUnit\\AdvanceTask_NUnit.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\shiri\\Source\\Repos\\Task3\\AdvanceTask_NUnit\\AdvanceTask_NUnit\\AdvanceTask_NUnit.csproj",
+        "projectUniqueName": "C:\\IndustryConnect\\AdvancedTask\\Task3\\AdvanceTask_NUnit\\AdvanceTask_NUnit\\AdvanceTask_NUnit.csproj",
         "projectName": "AdvanceTask_NUnit",
-        "projectPath": "C:\\Users\\shiri\\Source\\Repos\\Task3\\AdvanceTask_NUnit\\AdvanceTask_NUnit\\AdvanceTask_NUnit.csproj",
-        "packagesPath": "C:\\Users\\shiri\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\shiri\\Source\\Repos\\Task3\\AdvanceTask_NUnit\\AdvanceTask_NUnit\\obj\\",
+        "projectPath": "C:\\IndustryConnect\\AdvancedTask\\Task3\\AdvanceTask_NUnit\\AdvanceTask_NUnit\\AdvanceTask_NUnit.csproj",
+        "packagesPath": "C:\\Users\\Dell Latitude\\.nuget\\packages\\",
+        "outputPath": "C:\\IndustryConnect\\AdvancedTask\\Task3\\AdvanceTask_NUnit\\AdvanceTask_NUnit\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\shiri\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Dell Latitude\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -40,6 +40,14 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "AutoItX.Dotnet": {
+              "target": "Package",
+              "version": "[3.3.14.5, )"
+            },
+            "AutoItX3.Net": {
+              "target": "Package",
+              "version": "[3.3.16.1, )"
+            },
             "DotNetSeleniumExtras.PageObjects": {
               "target": "Package",
               "version": "[3.11.0, )"
@@ -105,8 +113,7 @@
             "net47",
             "net471",
             "net472",
-            "net48",
-            "net481"
+            "net48"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -115,7 +122,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.302\\RuntimeIdentifierGraph.json"
         }
       }
     }
