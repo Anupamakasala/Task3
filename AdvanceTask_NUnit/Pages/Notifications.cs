@@ -16,7 +16,7 @@ namespace AdvanceTask_NUnit.Pages
 
     {
         //Initialize the web elements first
-
+        //Intialize all the elements on the notification page
         //Go to the notification drop down 
         private IWebElement notificationDropdown => driver.FindElement(By.XPath("//i[@class='dropdown icon']"));
 
