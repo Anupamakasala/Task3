@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Admin\\Downloads\\Task3-Test-case-and-Condition-Skillshare\\Task3-Test-case-and-Condition-Skillshare\\AdvanceTask_NUnit\\AdvanceTask_NUnit\\AdvanceTask_NUnit.csproj": {}
+    "C:\\Users\\Admin\\Downloads\\Nunit Advanced\\Task3-Test-case-and-Condition-Skillshare\\AdvanceTask_NUnit\\AdvanceTask_NUnit\\AdvanceTask_NUnit.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Admin\\Downloads\\Task3-Test-case-and-Condition-Skillshare\\Task3-Test-case-and-Condition-Skillshare\\AdvanceTask_NUnit\\AdvanceTask_NUnit\\AdvanceTask_NUnit.csproj": {
+    "C:\\Users\\Admin\\Downloads\\Nunit Advanced\\Task3-Test-case-and-Condition-Skillshare\\AdvanceTask_NUnit\\AdvanceTask_NUnit\\AdvanceTask_NUnit.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Admin\\Downloads\\Task3-Test-case-and-Condition-Skillshare\\Task3-Test-case-and-Condition-Skillshare\\AdvanceTask_NUnit\\AdvanceTask_NUnit\\AdvanceTask_NUnit.csproj",
+        "projectUniqueName": "C:\\Users\\Admin\\Downloads\\Nunit Advanced\\Task3-Test-case-and-Condition-Skillshare\\AdvanceTask_NUnit\\AdvanceTask_NUnit\\AdvanceTask_NUnit.csproj",
         "projectName": "AdvanceTask_NUnit",
-        "projectPath": "C:\\Users\\Admin\\Downloads\\Task3-Test-case-and-Condition-Skillshare\\Task3-Test-case-and-Condition-Skillshare\\AdvanceTask_NUnit\\AdvanceTask_NUnit\\AdvanceTask_NUnit.csproj",
+        "projectPath": "C:\\Users\\Admin\\Downloads\\Nunit Advanced\\Task3-Test-case-and-Condition-Skillshare\\AdvanceTask_NUnit\\AdvanceTask_NUnit\\AdvanceTask_NUnit.csproj",
         "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Admin\\Downloads\\Task3-Test-case-and-Condition-Skillshare\\Task3-Test-case-and-Condition-Skillshare\\AdvanceTask_NUnit\\AdvanceTask_NUnit\\obj\\",
+        "outputPath": "C:\\Users\\Admin\\Downloads\\Nunit Advanced\\Task3-Test-case-and-Condition-Skillshare\\AdvanceTask_NUnit\\AdvanceTask_NUnit\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",

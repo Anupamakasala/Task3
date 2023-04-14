@@ -1,4 +1,5 @@
 ﻿using AdvanceTask_NUnit.Global;
+using NUnit.Framework;
 using OpenQA.Selenium;
 using System;
 using System.Collections.Generic;
@@ -24,7 +25,7 @@ namespace AdvanceTask_NUnit.Pages
         //Finding the Login Button
         private IWebElement LoginBtn => driver.FindElement(By.XPath("//button[contains(text(),'Login')]"));
 
-
+     
         public void LoginSteps()
         {
             //Populate excel data
@@ -44,6 +45,8 @@ namespace AdvanceTask_NUnit.Pages
             //Click Login button
             LoginBtn.Click();
             //wait(2);
+
+            }
+          
         }
     }
-}

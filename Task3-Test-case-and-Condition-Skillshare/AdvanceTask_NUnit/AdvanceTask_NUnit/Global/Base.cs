@@ -28,10 +28,9 @@ namespace AdvanceTask_NUnit.Global
         public static ExtentHtmlReporter htmlReporter;
         public static ExtentTest test;
 
-        static string excelPath = @"C:\Users\Admin\Downloads\Task3-Test-case-and-Condition-Skillshare\Task3-Test-case-and-Condition-Skillshare\AdvanceTask_NUnit\AdvanceTask_NUnit\TestData\TestData.xlsx";
-        static string reportPath = @"C:\Users\Admin\Downloads\Task3-Test-case-and-Condition-Skillshare\Task3-Test-case-and-Condition-Skillshare\AdvanceTask_NUnit\AdvanceTask_NUnit\TestData\TestReports";
-        static string screenshotsPath = @"C:\Users\Admin\Downloads\Task3-Test-case-and-Condition-Skillshare\Task3-Test-case-and-Condition-Skillshare\AdvanceTask_NUnit\AdvanceTask_NUnit\TestData\Screenshots";
-
+        static string excelPath = @"C:\Users\Admin\source\repos\Mars Advanced Nunit\Mars Advanced Nunit\AdvanceTask_NUnit\AdvanceTask_NUnit\TestData\TestData.xlsx";
+        static string reportPath = @"C:\Users\Admin\source\repos\Mars Advanced Nunit\Mars Advanced Nunit\AdvanceTask_NUnit\AdvanceTask_NUnit\TestData\TestReport";
+   
         #endregion
 
         public static string ExcelPath { get => excelPath; set => excelPath = value; }

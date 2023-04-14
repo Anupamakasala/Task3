@@ -14,15 +14,17 @@ namespace AdvanceTask_NUnit.Tests
 
     [TestFixture]
     [Parallelizable]
-    public class Tests:Base
+    public class Tests : Base
     {
         SignUp signUpObj;
         LoginPage loginPageObj;
+        Notifications notificationsObj;
 
         public Tests()
         {
             signUpObj = new SignUp();
             loginPageObj = new LoginPage();
+            notificationsObj = new Notifications();
         }
 
 
@@ -34,6 +36,7 @@ namespace AdvanceTask_NUnit.Tests
                 test = extentReportObj.CreateTest("SignUp for Portal Passed");
                 signUpObj.Register();
                 Thread.Sleep(2000);
+               
 
             }
             catch (NoSuchElementException e)
@@ -41,10 +44,11 @@ namespace AdvanceTask_NUnit.Tests
                 test.Fail(e.StackTrace);
             }
 
+            
         }
 
-            [Test, Order(2), Description("SignIn for the Portal")]
-            public void LogininSteps()
+        [Test, Order(2), Description("SignIn for the Portal")]
+        public void LogininSteps()
         {
             try
             {
@@ -57,8 +61,53 @@ namespace AdvanceTask_NUnit.Tests
             {
                 test.Fail(e.StackTrace);
             }
-        }
+
+            
         }
 
+        [Test, Order(3), Description("Load More Notifications")]
+
+        public void LoadMoreNotification()
+
+
+        {
+            try
+            {
+                test = extentReportObj.CreateTest("Load More notification on the page");
+                loginPageObj.LoginSteps();
+                notificationsObj.LoadMoreNotification();
+                Thread.Sleep(2000);
+
+            }
+            catch (NoSuchElementException e)
+            {
+                test.Fail(e.StackTrace);
+            }
+
+
+        }
+
+        [Test, Order(4), Description("Show Less Notification")]
+
+        public void ShowLessNotification()
+
+        {
+            try
+            {
+                test = extentReportObj.CreateTest("Show less notification on the page");
+                loginPageObj.LoginSteps();
+                notificationsObj.LoadMoreNotification();
+                notificationsObj.ShowLessNotification();
+                Thread.Sleep(2000);
+            
+            }
+            catch (NoSuchElementException e)
+            {
+                test.Fail(e.StackTrace);
+            }
+
+        }
     }
+
+}
 
