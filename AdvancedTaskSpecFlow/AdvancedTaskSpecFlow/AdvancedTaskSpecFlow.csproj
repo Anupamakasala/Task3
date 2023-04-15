@@ -9,7 +9,6 @@
 
   <ItemGroup>
     <Folder Include="Features\" />
-    <Folder Include="StepDefinitions\" />
   </ItemGroup>
 
   <ItemGroup>
@@ -21,6 +20,7 @@
     <PackageReference Include="Selenium.Support" Version="4.8.2" />
     <PackageReference Include="Selenium.WebDriver" Version="4.8.2" />
     <PackageReference Include="SpecFlow" Version="3.9.74" />
+    <PackageReference Include="SpecFlow.Contrib.Variants" Version="3.9.80" />
     <PackageReference Include="SpecFlow.NUnit" Version="3.9.74" />
     <PackageReference Include="SpecFlow.Tools.MsBuild.Generation" Version="3.9.74" />
   </ItemGroup>

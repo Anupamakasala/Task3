@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "OBoJTM0Buquh/d4sok525inbQJ6cWe2C7Zq3ZVZWwBO07XDYJPqj9rxUBhFsJB9ioEjRRQaMxbGCHER5PR+6UQ==",
+  "dgSpecHash": "F5zbp4s2XPaz4vmnTG2PBj8B5yAb9OqT7cHtOg2PVXbAAJYu4MVwKyAUaFbFahqHtFGbR6L5RbAexc7ey7ASfw==",
   "success": true,
   "projectFilePath": "C:\\IndustryConnect\\AdvancedTask\\Task3\\AdvancedTaskSpecFlow\\AdvancedTaskSpecFlow\\AdvancedTaskSpecFlow.csproj",
   "expectedPackageFiles": [
@@ -49,6 +49,7 @@
     "C:\\Users\\Dell Latitude\\.nuget\\packages\\selenium.support\\4.8.2\\selenium.support.4.8.2.nupkg.sha512",
     "C:\\Users\\Dell Latitude\\.nuget\\packages\\selenium.webdriver\\4.8.2\\selenium.webdriver.4.8.2.nupkg.sha512",
     "C:\\Users\\Dell Latitude\\.nuget\\packages\\specflow\\3.9.74\\specflow.3.9.74.nupkg.sha512",
+    "C:\\Users\\Dell Latitude\\.nuget\\packages\\specflow.contrib.variants\\3.9.80\\specflow.contrib.variants.3.9.80.nupkg.sha512",
     "C:\\Users\\Dell Latitude\\.nuget\\packages\\specflow.internal.json\\1.0.8\\specflow.internal.json.1.0.8.nupkg.sha512",
     "C:\\Users\\Dell Latitude\\.nuget\\packages\\specflow.nunit\\3.9.74\\specflow.nunit.3.9.74.nupkg.sha512",
     "C:\\Users\\Dell Latitude\\.nuget\\packages\\specflow.tools.msbuild.generation\\3.9.74\\specflow.tools.msbuild.generation.3.9.74.nupkg.sha512",
