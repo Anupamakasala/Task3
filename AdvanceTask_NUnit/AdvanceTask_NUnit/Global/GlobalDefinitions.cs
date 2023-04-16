@@ -74,7 +74,7 @@ namespace AdvanceTask_NUnit.Global
                 {
                     //Retriving Data using LINQ to reduce much of iterations
 
-                    //rowNumber = rowNumber - 1;
+                    rowNumber = rowNumber - 1;
                     string data = (from colData in dataCol
                                    where colData.colName == columnName && colData.rowNumber == rowNumber
                                    select colData.colValue).SingleOrDefault();
