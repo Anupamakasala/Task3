@@ -90,11 +90,11 @@ namespace AdvanceTask_NUnit.Global
                 }
             }
 
-            //public static void PopulateInCollection(string fileName, string SheetName)
-            public static void PopulateInCollection(string fileName, string sheetName)
+            //public static void PopulateInCollection(string fileName, strin=)
+            public static void PopulateInCollection(string fileName, string Sheetname)
             {
                 ExcelUtil.ClearData();
-                DataTable table = ExcelToDataTable(fileName, sheetName);
+                DataTable table = ExcelToDataTable(fileName, Sheetname);
 
                 //Iterate through the rows and columns of the Table
                 for (int row = 1; row <= table.Rows.Count; row++)

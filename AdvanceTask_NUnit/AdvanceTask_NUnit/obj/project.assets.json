@@ -10597,19 +10597,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\shiri\\.nuget\\packages\\": {}
+    "C:\\Users\\solan\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\shiri\\Source\\Repos\\Task3\\AdvanceTask_NUnit\\AdvanceTask_NUnit\\AdvanceTask_NUnit.csproj",
+      "projectUniqueName": "C:\\Users\\solan\\Desktop\\Group Prject advance task\\Task 3\\Task3\\AdvanceTask_NUnit\\AdvanceTask_NUnit\\AdvanceTask_NUnit.csproj",
       "projectName": "AdvanceTask_NUnit",
-      "projectPath": "C:\\Users\\shiri\\Source\\Repos\\Task3\\AdvanceTask_NUnit\\AdvanceTask_NUnit\\AdvanceTask_NUnit.csproj",
-      "packagesPath": "C:\\Users\\shiri\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\shiri\\Source\\Repos\\Task3\\AdvanceTask_NUnit\\AdvanceTask_NUnit\\obj\\",
+      "projectPath": "C:\\Users\\solan\\Desktop\\Group Prject advance task\\Task 3\\Task3\\AdvanceTask_NUnit\\AdvanceTask_NUnit\\AdvanceTask_NUnit.csproj",
+      "packagesPath": "C:\\Users\\solan\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\solan\\Desktop\\Group Prject advance task\\Task 3\\Task3\\AdvanceTask_NUnit\\AdvanceTask_NUnit\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\shiri\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\solan\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -10710,7 +10710,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
       }
     }
   }
