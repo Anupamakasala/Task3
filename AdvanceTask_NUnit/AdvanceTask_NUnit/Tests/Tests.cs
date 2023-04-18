@@ -77,7 +77,43 @@ namespace AdvanceTask_NUnit.Tests
             Assert.That(deletenotificationText == "You have no notifications", "Test failed");
         }
 
+        [Test, Order(6)]
+        public void AddDescription()
+        {
+            ProfilePage profileObj = new ProfilePage();
+            ExcelUtil.PopulateInCollection(@"C:\IndustryConnect\AdvancedTask\Task3\AdvanceTask_NUnit\AdvanceTask_NUnit\TestData\TestData.xlsx", "Profile");
+            profileObj.AddDescription(ExcelUtil.ReadData(1, "description"));
+            string confirmationText = profileObj.ViewConfirmation();
+            string descriptionText = profileObj.ViewDescription();
+            Assert.That(confirmationText == "Description has been saved successfully", "Test failed");
+            Assert.That(descriptionText == ExcelUtil.ReadData(1, "description"), "Test failed");
+        }
 
+        [Test, Order(7)]
+        public void ChangeProfilePassword()
+        {
+            ProfilePage profileObj = new ProfilePage();
+            ExcelUtil.PopulateInCollection(@"C:\IndustryConnect\AdvancedTask\Task3\AdvanceTask_NUnit\AdvanceTask_NUnit\TestData\TestData.xlsx", "SignIn");
+            profileObj.ChangePassword(ExcelUtil.ReadData(1, "Password"),"newPassword");
+            string confirmationText = profileObj.ViewConfirmation();
+            Assert.That(confirmationText == "Password Changed Successfully", "Test failed");
+        }
+
+        [Test, Order(8)]
+        public void ViewReceivedRequestListing()
+        {
+            ProfilePage profileObj = new ProfilePage();
+            string receivedRequestText = profileObj.VerifyReceivedRequests();
+            Assert.That(receivedRequestText == "You do not have any received requests!", "Test failed");
+        }
+
+        [Test, Order(9)]
+        public void ViewSentRequestListing()
+        {
+            ProfilePage profileObj = new ProfilePage();
+            string sentRequestText = profileObj.VerifySentRequests();
+            Assert.That(sentRequestText == "You do not have any sent requests!", "Test failed");
+        }
 
     }
 }
