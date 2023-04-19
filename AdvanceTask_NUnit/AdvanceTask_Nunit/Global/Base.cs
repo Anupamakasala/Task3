@@ -28,13 +28,10 @@ namespace AdvanceTask_NUnit.Global
         public static ExtentHtmlReporter htmlReporter;
         public static ExtentTest test;
 
-        static string excelPath = @"C:\Users\Admin\source\repos\Mars Advanced Nunit\Mars Advanced Nunit\AdvanceTask_NUnit\AdvanceTask_NUnit\TestData\TestData.xlsx";
-        static string reportPath = @"C:\Users\Admin\source\repos\Mars Advanced Nunit\Mars Advanced Nunit\AdvanceTask_NUnit\AdvanceTask_NUnit\TestData\TestReport";
-   
-        #endregion
+        static string reportPath = System.IO.Directory.GetParent(@"../../../").FullName +
+          Path.DirectorySeparatorChar + "ExtentReports" +
+          Path.DirectorySeparatorChar + "Result " + DateTime.Now.ToString("ddMMyyyy HHmmss");
 
-        public static string ExcelPath { get => excelPath; set => excelPath = value; }
-   
 
         [OneTimeSetUp]
         public void LoginActions()
@@ -47,23 +44,7 @@ namespace AdvanceTask_NUnit.Global
 
         }
 
-        [SetUp]
-        public void Inititalize()
-        {
-            driver = new ChromeDriver();
-            driver.Navigate().GoToUrl("http://localhost:5000");
-            driver.Manage().Window.Maximize();
-
-
-            //Load Excel
-            
-           ExcelUtil.PopulateInCollection(Base.excelPath, "LoginPage");
-
-            //Open URL
-            driver.Navigate().GoToUrl(ExcelUtil.ReadData(2, "Url"));
-
-        }
-
+   
 
         public class GetScreenShot
         {

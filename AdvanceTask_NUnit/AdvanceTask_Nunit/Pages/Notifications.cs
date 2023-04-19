@@ -1,64 +1,66 @@
 ﻿using AdvanceTask_NUnit.Global;
 using NUnit.Framework;
 using OpenQA.Selenium;
+using OpenQA.Selenium.Support.UI;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using static AdvanceTask_NUnit.Global.GlobalDefinitions;
-using static AdvanceTask_NUnit.Global.Wait_Helpers;
-
 
 namespace AdvanceTask_NUnit.Pages
 {
     public class Notifications : Base
-
     {
-        //Initialize the web elements first
-        //Intialize all the elements on the notification page
-        //Go to the notification drop down 
-        private IWebElement notificationDropdown => driver.FindElement(By.XPath("//i[@class='dropdown icon']"));
+        public static IWebElement notificationTab => driver.FindElement(By.XPath("//div[1]/div[2]/div/div"));
+        public static IWebElement seeAllElement => driver.FindElement(By.XPath("//a[@href='/Account/Dashboard']"));
+        public static IWebElement checkBox => driver.FindElement(By.XPath("//input[@type='checkbox']"));
+        public static IWebElement deleteIcon => driver.FindElement(By.XPath("//div[@data-tooltip='Delete selection']"));
+        public static IWebElement selectAllIcon => driver.FindElement(By.XPath("//i[@class='mouse pointer icon']"));
+        public static IWebElement markAsReadIcon => driver.FindElement(By.XPath("//i[@class='check square icon']"));
 
-        //See all option
-        private IWebElement seeAll => driver.FindElement(By.XPath("/html/body/div[1]/div/div[1]/div[2]/div/div/div/span/div/div[2]/div/center/a"));
-
-        //load more to see all notifications
-        private IWebElement LoadMore => driver.FindElement(By.XPath("//a[@class='ui button']"));
-
-        //show less to see less notifications
-        private IWebElement ShowLess => driver.FindElement(By.XPath("//a[@class='ui button']"));
-
-
-        public void LoadMoreNotification()
+        public string MarkAsRead()
         {
-
-            //Click on notification drop down
+            //Wait_Helpers.WaitToExist(driver, "XPath", "//div[1]/div[2]/div/div", 10);
+            Thread.Sleep(3000);
+            notificationTab.Click();
+            // Wait_Helpers.WaitToExist(driver, "XPath", "//a[@href='/Account/Dashboard']", 10);
             Thread.Sleep(2000);
-            notificationDropdown.Click();
-
-            //Click on see all option
+            seeAllElement.Click();
+            //Wait_Helpers.WaitToExist(driver, "XPath", "//i[@class='mouse pointer icon']", 10);
             Thread.Sleep(2000);
-            seeAll.Click();
+            selectAllIcon.Click();
+            markAsReadIcon.Click();
+            driver.Navigate().Refresh();
+            Wait_Helpers.WaitToExist(driver, "XPath", " //div[@class='item link']", 10);
 
-            //Click on loadMore option to see all the notifications 
-            wait(2);
-            LoadMore.Click();
-
+            var HighlightedText = driver.FindElement(By.XPath(" //div[@class='item link']")).GetCssValue("font-weight");
+            return HighlightedText;
 
         }
-    
-
-
-            public void ShowLessNotification()
+        public string DeleteNotification()
         {
-
-            //Click on showless option to see onlylatest notifications
-            Thread.Sleep(2000);
-            ShowLess.Click();
-            } 
+            //Wait_Helpers.WaitToExist(driver, "XPath", "/div[@class='ui top left pointing dropdown item']", 20);
+            Thread.Sleep(3000);
+            notificationTab.Click();
+            Thread.Sleep(3000);
+            //Wait_Helpers.WaitToExist(driver, "XPath", "//a[@href='/Account/Dashboard']", 10);
+            seeAllElement.Click();
+            Wait_Helpers.WaitToExist(driver, "XPath", "//input[@type='checkbox']", 10);
+            selectAllIcon.Click();
+            deleteIcon.Click();
+            driver.Navigate().Refresh();
+            Wait_Helpers.WaitToExist(driver, "XPath", "//div[2]/div/div/div[3]/div[2]/span/div", 10);
+            var NotificationText = driver.FindElement(By.XPath("//div[2]/div/div/div[3]/div[2]/span/div")).Text;
+            Console.WriteLine(NotificationText);
+            return NotificationText;
 
         }
+
+
+
+
+
 
     }
-
+}
