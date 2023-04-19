@@ -21,7 +21,6 @@ namespace AdvanceTask_NUnit.Pages
                 driver.Navigate().GoToUrl("http://localhost:5000/");
                 driver.Manage().Window.Maximize();
                 
-
                 //Login                       
                 SignInButton.Click();
                 Wait_Helpers.WaitToBeClickable(driver, "XPath", "//input[@type='text'and @name='email']", 3);
