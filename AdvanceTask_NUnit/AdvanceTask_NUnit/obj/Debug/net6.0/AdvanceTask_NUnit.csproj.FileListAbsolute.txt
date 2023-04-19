@@ -1,0 +1,7 @@
+C:\Users\Admin\Downloads\Nunit Advanced\Task3-Test-case-and-Condition-Skillshare\AdvanceTask_NUnit\Task3\AdvanceTask_NUnit\AdvanceTask_NUnit\obj\Debug\net6.0\AdvanceTask_NUnit.csproj.AssemblyReference.cache
+C:\Users\Admin\Downloads\Nunit Advanced\Task3-Test-case-and-Condition-Skillshare\AdvanceTask_NUnit\Task3\AdvanceTask_NUnit\AdvanceTask_NUnit\obj\Debug\net6.0\Interop.AutoItX3Lib.dll
+C:\Users\Admin\Downloads\Nunit Advanced\Task3-Test-case-and-Condition-Skillshare\AdvanceTask_NUnit\Task3\AdvanceTask_NUnit\AdvanceTask_NUnit\obj\Debug\net6.0\AdvanceTask_NUnit.csproj.ResolveComReference.cache
+C:\Users\Admin\Downloads\Nunit Advanced\Task3-Test-case-and-Condition-Skillshare\AdvanceTask_NUnit\Task3\AdvanceTask_NUnit\AdvanceTask_NUnit\obj\Debug\net6.0\AdvanceTask_NUnit.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Admin\Downloads\Nunit Advanced\Task3-Test-case-and-Condition-Skillshare\AdvanceTask_NUnit\Task3\AdvanceTask_NUnit\AdvanceTask_NUnit\obj\Debug\net6.0\AdvanceTask_NUnit.AssemblyInfoInputs.cache
+C:\Users\Admin\Downloads\Nunit Advanced\Task3-Test-case-and-Condition-Skillshare\AdvanceTask_NUnit\Task3\AdvanceTask_NUnit\AdvanceTask_NUnit\obj\Debug\net6.0\AdvanceTask_NUnit.AssemblyInfo.cs
+C:\Users\Admin\Downloads\Nunit Advanced\Task3-Test-case-and-Condition-Skillshare\AdvanceTask_NUnit\Task3\AdvanceTask_NUnit\AdvanceTask_NUnit\obj\Debug\net6.0\AdvanceTask_NUnit.csproj.CoreCompileInputs.cache

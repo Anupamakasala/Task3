@@ -1,6 +1,7 @@
 ﻿using AdvanceTask_NUnit.Global;
 using AdvanceTask_NUnit.Pages;
 using NUnit.Framework;
+using OpenQA.Selenium;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,7 +11,7 @@ using static AdvanceTask_NUnit.Global.GlobalDefinitions;
 
 namespace AdvanceTask_NUnit.Tests
 {
-    public class Tests:Base
+    public class Tests : Base
     {
         [Test, Order(1)]
         public void ACreateShareSkill()
@@ -47,7 +48,7 @@ namespace AdvanceTask_NUnit.Tests
             manageListingObj.EditListing(ExcelUtil.ReadData(1, "title"), ExcelUtil.ReadData(1, "description"), ExcelUtil.ReadData(1, "addtags"), ExcelUtil.ReadData(1, "skilltrade"),
                                           ExcelUtil.ReadData(1, "skilltags"), ExcelUtil.ReadData(1, "charge"));
             string editmanagelisitngtest = manageListingObj.GetEditedManageListing();
-                        
+
             Assert.That(editmanagelisitngtest == "All ages Ballet Dancer", "Service listing not updated");
 
 
@@ -55,7 +56,7 @@ namespace AdvanceTask_NUnit.Tests
 
         }
 
-       
+
         [Test, Order(4)]
         public void MarkAsRead()
         {
@@ -94,7 +95,7 @@ namespace AdvanceTask_NUnit.Tests
         {
             ProfilePage profileObj = new ProfilePage();
             ExcelUtil.PopulateInCollection(@"C:\IndustryConnect\AdvancedTask\Task3\AdvanceTask_NUnit\AdvanceTask_NUnit\TestData\TestData.xlsx", "SignIn");
-            profileObj.ChangePassword(ExcelUtil.ReadData(1, "Password"),"newPassword");
+            profileObj.ChangePassword(ExcelUtil.ReadData(1, "Password"), "newPassword");
             string confirmationText = profileObj.ViewConfirmation();
             Assert.That(confirmationText == "Password Changed Successfully", "Test failed");
         }
@@ -115,5 +116,99 @@ namespace AdvanceTask_NUnit.Tests
             Assert.That(sentRequestText == "You do not have any sent requests!", "Test failed");
         }
 
+
+        [Test, Order(1), Description("Signup for Portal")]
+        public void Register()
+        {
+            SignUp signUpObj;
+            signUpObj = new SignUp();
+            try
+            {
+                test = extentReportObj.CreateTest("SignUp for Portal Passed");
+                signUpObj.Register();
+                Thread.Sleep(2000);
+
+
+            }
+            catch (NoSuchElementException e)
+            {
+                test.Fail(e.StackTrace);
+            }
+
+
+        }
+
+        [Test, Order(2), Description("SignIn for the Portal")]
+        public void LogininSteps()
+        {
+            LoginPage loginPageObj;
+            loginPageObj = new LoginPage();
+            try
+            {
+                test = extentReportObj.CreateTest("SignIn for the Portal passed");
+                loginPageObj.LoginSteps();
+                Thread.Sleep(2000);
+
+            }
+            catch (NoSuchElementException e)
+            {
+                test.Fail(e.StackTrace);
+            }
+
+
+        }
+
+        [Test, Order(3), Description("Load More Notifications")]
+
+        public void LoadMoreNotification()
+
+
+        {
+            LoginPage loginPageObj;
+            NotificationMoreAndLess notificationObj;
+            loginPageObj = new LoginPage();
+            notificationObj = new NotificationMoreAndLess();
+
+            try
+            {
+                test = extentReportObj.CreateTest("Load More notification on the page");
+                loginPageObj.LoginSteps();
+                notificationObj.LoadMoreNotification();
+                Thread.Sleep(2000);
+
+            }
+            catch (NoSuchElementException e)
+            {
+                test.Fail(e.StackTrace);
+            }
+
+
+        }
+
+        [Test, Order(4), Description("Show Less Notification")]
+
+        public void ShowLessNotification()
+
+        {
+            LoginPage loginPageObj;
+            NotificationMoreAndLess notificationObj;
+            loginPageObj = new LoginPage();
+            notificationObj = new NotificationMoreAndLess();
+
+            try
+            {
+                test = extentReportObj.CreateTest("Show less notification on the page");
+                loginPageObj.LoginSteps();
+                notificationObj.LoadMoreNotification();
+                notificationObj.ShowLessNotification();
+                Thread.Sleep(2000);
+
+            }
+            catch (NoSuchElementException e)
+            {
+                test.Fail(e.StackTrace);
+            }
+
+        }
     }
 }
