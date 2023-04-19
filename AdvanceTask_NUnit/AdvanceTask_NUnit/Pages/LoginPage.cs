@@ -21,16 +21,15 @@ namespace AdvanceTask_NUnit.Pages
                 driver.Navigate().GoToUrl("http://localhost:5000/");
                 driver.Manage().Window.Maximize();
                 
-
                 //Login                       
                 SignInButton.Click();
                 Wait_Helpers.WaitToBeClickable(driver, "XPath", "//input[@type='text'and @name='email']", 3);
 
                 UserNameTextbox.SendKeys("poojasaini31@gmail.com");
                 PasswordTextbox.SendKeys("Testing");
-            Wait_Helpers.WaitToBeVisible(driver, "XPath", "//BUTTON[@class='fluid ui teal button'][text()='Login']", 5);
+                Wait_Helpers.WaitToBeVisible(driver, "XPath", "//BUTTON[@class='fluid ui teal button'][text()='Login']", 5);
                 LoginButton.Click();
-            Wait_Helpers.WaitToBeVisible(driver, "XPath", "//*[@id=\"account-profile-section\"]/div/section[2]/div/div/div/div[3]/div/div/div/h3/span", 10);
+                Wait_Helpers.WaitToBeVisible(driver, "XPath", "//*[@id=\"account-profile-section\"]/div/section[2]/div/div/div/div[3]/div/div/div/h3/span", 10);
 
             }
 
