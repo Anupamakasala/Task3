@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static AdvanceTask_NUnit.Global.GlobalDefinitions;
 
 namespace AdvanceTask_NUnit.Global
 {
@@ -20,9 +21,15 @@ namespace AdvanceTask_NUnit.Global
         public static ExtentReports extentReportObj = null;
         public static ExtentHtmlReporter htmlReporter;
         public static ExtentTest test;
+        public static string excelPath = @"C:\Users\Admin\source\repos\Mars Advanced Nunit\Mars Advanced Nunit\AdvanceTask_NUnit\AdvanceTask_NUnit\TestData\TestData.xlsx";
+        
+
         static string reportPath = System.IO.Directory.GetParent(@"../../../").FullName +
         Path.DirectorySeparatorChar + "ExtentReports" +
         Path.DirectorySeparatorChar + "Result " + DateTime.Now.ToString("ddMMyyyy HHmmss");
+       
+
+
 
         [OneTimeSetUp]
         public void LoginActions()
@@ -38,6 +45,18 @@ namespace AdvanceTask_NUnit.Global
             
             // Can Add Wait,Initialize and call methods
 
+
+        }
+
+        [SetUp]
+        public void Initialize()
+        {
+            //Load Excel
+            ExcelUtil.PopulateInCollection(Base.excelPath, "LoginPage");
+
+            //OPen URL
+
+            driver.Navigate().GoToUrl(ExcelUtil.ReadData(2, "Url"));
 
         }
               
