@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Admin\\Downloads\\Nunit Advanced\\Task3-Test-case-and-Condition-Skillshare\\AdvanceTask_NUnit\\Task3\\AdvanceTask_NUnit\\AdvanceTask_NUnit\\AdvanceTask_NUnit.csproj": {}
+    "D:\\Advanced_Tasks\\Task3\\AdvanceTask_NUnit\\AdvanceTask_NUnit\\AdvanceTask_NUnit.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Admin\\Downloads\\Nunit Advanced\\Task3-Test-case-and-Condition-Skillshare\\AdvanceTask_NUnit\\Task3\\AdvanceTask_NUnit\\AdvanceTask_NUnit\\AdvanceTask_NUnit.csproj": {
+    "D:\\Advanced_Tasks\\Task3\\AdvanceTask_NUnit\\AdvanceTask_NUnit\\AdvanceTask_NUnit.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Admin\\Downloads\\Nunit Advanced\\Task3-Test-case-and-Condition-Skillshare\\AdvanceTask_NUnit\\Task3\\AdvanceTask_NUnit\\AdvanceTask_NUnit\\AdvanceTask_NUnit.csproj",
+        "projectUniqueName": "D:\\Advanced_Tasks\\Task3\\AdvanceTask_NUnit\\AdvanceTask_NUnit\\AdvanceTask_NUnit.csproj",
         "projectName": "AdvanceTask_NUnit",
-        "projectPath": "C:\\Users\\Admin\\Downloads\\Nunit Advanced\\Task3-Test-case-and-Condition-Skillshare\\AdvanceTask_NUnit\\Task3\\AdvanceTask_NUnit\\AdvanceTask_NUnit\\AdvanceTask_NUnit.csproj",
-        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Admin\\Downloads\\Nunit Advanced\\Task3-Test-case-and-Condition-Skillshare\\AdvanceTask_NUnit\\Task3\\AdvanceTask_NUnit\\AdvanceTask_NUnit\\obj\\",
+        "projectPath": "D:\\Advanced_Tasks\\Task3\\AdvanceTask_NUnit\\AdvanceTask_NUnit\\AdvanceTask_NUnit.csproj",
+        "packagesPath": "C:\\Users\\Pooja\\.nuget\\packages\\",
+        "outputPath": "D:\\Advanced_Tasks\\Task3\\AdvanceTask_NUnit\\AdvanceTask_NUnit\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Pooja\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -113,7 +113,8 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -122,7 +123,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.302\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.200\\RuntimeIdentifierGraph.json"
         }
       }
     }
