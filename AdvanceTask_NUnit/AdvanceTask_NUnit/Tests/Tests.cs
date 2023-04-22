@@ -21,7 +21,7 @@ namespace AdvanceTask_NUnit.Tests
             ShareSkill shareSkillObj = new ShareSkill();
 
             ExcelUtil.PopulateInCollection(@"C:\IndustryConnect\AdvancedTask\Task3\AdvanceTask_NUnit\AdvanceTask_NUnit\TestData\TestData.xlsx", "SignIn");
-            LoginPage loginObj = new LoginPage(ExcelUtil.ReadData(1, "Username"), ExcelUtil.ReadData(1, "Password"));
+            //LoginPage loginObj = new LoginPage(ExcelUtil.ReadData(1, "Username"), ExcelUtil.ReadData(1, "Password"));
 
 
             ExcelUtil.PopulateInCollection(@"C:\IndustryConnect\AdvancedTask\Task3\AdvanceTask_NUnit\AdvanceTask_NUnit\TestData\TestData.xlsx", "ShareSkills");
@@ -61,7 +61,7 @@ namespace AdvanceTask_NUnit.Tests
         public void MarkAsRead()
         {
             ExcelUtil.PopulateInCollection(@"C:\IndustryConnect\AdvancedTask\Task3\AdvanceTask_NUnit\AdvanceTask_NUnit\TestData\TestData.xlsx", "SignIn");
-            LoginPage loginObj = new LoginPage(ExcelUtil.ReadData(1, "Username"), ExcelUtil.ReadData(1, "Password"));
+            //LoginPage loginObj = new LoginPage(ExcelUtil.ReadData(1, "Username"), ExcelUtil.ReadData(1, "Password"));
             Notifications notificationObj = new Notifications();
             string testResult = notificationObj.MarkAsRead();
             Assert.That(testResult == "400", "Test failed");
@@ -72,7 +72,7 @@ namespace AdvanceTask_NUnit.Tests
         public void DeleteNotification()
         {
             ExcelUtil.PopulateInCollection(@"C:\IndustryConnect\AdvancedTask\Task3\AdvanceTask_NUnit\AdvanceTask_NUnit\TestData\TestData.xlsx", "SignIn");
-            LoginPage loginObj = new LoginPage(ExcelUtil.ReadData(1, "Username"), ExcelUtil.ReadData(1, "Password"));
+            //LoginPage loginObj = new LoginPage(ExcelUtil.ReadData(1, "Username"), ExcelUtil.ReadData(1, "Password"));
             Notifications notificationObj = new Notifications();
             string deletenotificationText = notificationObj.DeleteNotification();
             Assert.That(deletenotificationText == "You have no notifications", "Test failed");
@@ -141,8 +141,8 @@ namespace AdvanceTask_NUnit.Tests
         [Test, Order(2), Description("SignIn for the Portal")]
         public void LogininSteps()
         {
-            LoginPage loginPageObj;
-            loginPageObj = new LoginPage();
+            Login loginPageObj;
+            loginPageObj = new Login();
             try
             {
                 test = extentReportObj.CreateTest("SignIn for the Portal passed");
@@ -164,9 +164,9 @@ namespace AdvanceTask_NUnit.Tests
 
 
         {
-            LoginPage loginPageObj;
+            Login loginPageObj;
             NotificationMoreAndLess notificationObj;
-            loginPageObj = new LoginPage();
+            loginPageObj = new Login();
             notificationObj = new NotificationMoreAndLess();
 
             try
@@ -190,9 +190,9 @@ namespace AdvanceTask_NUnit.Tests
         public void ShowLessNotification()
 
         {
-            LoginPage loginPageObj;
+            Login loginPageObj;
             NotificationMoreAndLess notificationObj;
-            loginPageObj = new LoginPage();
+            loginPageObj = new Login();
             notificationObj = new NotificationMoreAndLess();
 
             try
