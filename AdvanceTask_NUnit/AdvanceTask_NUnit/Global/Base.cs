@@ -21,8 +21,11 @@ namespace AdvanceTask_NUnit.Global
         public static ExtentReports extentReportObj = null;
         public static ExtentHtmlReporter htmlReporter;
         public static ExtentTest test;
-        public static string excelPath = @"C:\Users\Admin\source\repos\Mars Advanced Nunit\Mars Advanced Nunit\AdvanceTask_NUnit\AdvanceTask_NUnit\TestData\TestData.xlsx";
-        
+        public static string excelPath = @"C:\Users\Admin\Downloads\Nunit Advanced\Task3-Test-case-and-Condition-Skillshare\AdvanceTask_NUnit\AdvanceTask_NUnit\AdvanceTask_NUnit\TestData\TestData.xlsx";
+        //@"C:\Users\Admin\source\repos\Mars Advanced Nunit\Mars Advanced Nunit\Task 3 Advanced\AdvanceTask_NUnit\TestData\TestData.xlsx";
+
+
+
 
         static string reportPath = System.IO.Directory.GetParent(@"../../../").FullName +
         Path.DirectorySeparatorChar + "ExtentReports" +

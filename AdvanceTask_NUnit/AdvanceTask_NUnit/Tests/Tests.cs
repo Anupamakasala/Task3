@@ -122,6 +122,10 @@ namespace AdvanceTask_NUnit.Tests
         {
             SignUp signUpObj;
             signUpObj = new SignUp();
+
+            string registrationSuccessfulPopUpMessage = signUpObj.GetPopUpMessage(driver);
+            Assert.That(registrationSuccessfulPopUpMessage == "Registration successful", "Actual popup message and expected popup message do not match");
+
             try
             {
                 test = extentReportObj.CreateTest("SignUp for Portal Passed");
@@ -134,6 +138,9 @@ namespace AdvanceTask_NUnit.Tests
             {
                 test.Fail(e.StackTrace);
             }
+
+        
+
 
 
         }

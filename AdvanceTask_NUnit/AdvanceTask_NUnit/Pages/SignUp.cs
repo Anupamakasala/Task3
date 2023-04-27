@@ -67,9 +67,19 @@ namespace AdvanceTask_NUnit.Pages
 
             //Click on join button to Sign Up
             JoinBtn.Click();
+
+        }
+
+            public string GetPopUpMessage(IWebDriver driver)
+            {
+            IWebElement registrationSuccessfulPopUpMessage = driver.FindElement(By.XPath("/html/body/div[1]/div"));
+            return registrationSuccessfulPopUpMessage.Text;
+
+            }
+
         }
     }
-}
+
 
 
 

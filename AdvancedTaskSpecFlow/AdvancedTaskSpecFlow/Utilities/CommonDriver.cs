@@ -1,4 +1,5 @@
-﻿using OpenQA.Selenium;
+﻿using AdvancedTaskSpecFlow.Pages;
+using OpenQA.Selenium;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,7 +11,10 @@ namespace AdvancedTaskSpecFlow.Utilities
 {
     public class CommonDriver
     {
+       
         public static IWebDriver driver;
-                       
+        
+
+
     }
 }

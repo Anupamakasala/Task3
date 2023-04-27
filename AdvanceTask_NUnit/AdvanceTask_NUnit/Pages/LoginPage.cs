@@ -22,9 +22,14 @@ namespace AdvanceTask_NUnit.Pages
         //Finding the Password Field
         private IWebElement Password => driver.FindElement(By.Name("password"));
 
+        //Tick the CheckBox Remember me
+        private IWebElement Checkbox => driver.FindElement(By.XPath("//input[@name='rememberDetails']"));
+
         //Finding the Login Button
         private IWebElement LoginBtn => driver.FindElement(By.XPath("//button[contains(text(),'Login')]"));
-
+        
+        //Get the NewName onto Profile
+        IWebElement newName => driver.FindElement(By.XPath("//span[@class='item ui dropdown link']"));
 
         public void LoginSteps()
         {
@@ -42,11 +47,21 @@ namespace AdvanceTask_NUnit.Pages
             //Enter password
             Password.SendKeys(ExcelUtil.ReadData(2, "Password"));
 
+            //Click the RememberMe Checkbox
+            Checkbox.Click();
+
             //Click Login button
             LoginBtn.Click();
             //wait(2);
+        }
 
+        public string GetName(IWebDriver driver)
+        {
+            return newName.Text;
+        }
+
+       
         }
 
     }
-}
+
