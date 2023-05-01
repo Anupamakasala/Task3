@@ -8,7 +8,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using static AdvanceTask_NUnit.Global.GlobalDefinitions;
+using AdvanceTask_NUnit.Pages;
 
 namespace AdvanceTask_NUnit.Global
 {
@@ -16,13 +16,12 @@ namespace AdvanceTask_NUnit.Global
     {
         public static IWebDriver driver;
 
-        // Define other objects here
-
+        // Define other objects here        
+        public static string excelPath = @"C:\Users\Admin\Downloads\Nunit Advanced\Task3-Test-case-and-Condition-Skillshare\AdvanceTask_NUnit\AdvanceTask_NUnit\AdvanceTask_NUnit\TestData\TestData.xlsx";
         public static ExtentReports extentReportObj = null;
         public static ExtentHtmlReporter htmlReporter;
         public static ExtentTest test;
-        public static string excelPath = @"C:\Users\Admin\Downloads\Nunit Advanced\Task3-Test-case-and-Condition-Skillshare\AdvanceTask_NUnit\AdvanceTask_NUnit\AdvanceTask_NUnit\TestData\TestData.xlsx";
-        //@"C:\Users\Admin\source\repos\Mars Advanced Nunit\Mars Advanced Nunit\Task 3 Advanced\AdvanceTask_NUnit\TestData\TestData.xlsx";
+    
 
 
 
@@ -30,8 +29,6 @@ namespace AdvanceTask_NUnit.Global
         static string reportPath = System.IO.Directory.GetParent(@"../../../").FullName +
         Path.DirectorySeparatorChar + "ExtentReports" +
         Path.DirectorySeparatorChar + "Result " + DateTime.Now.ToString("ddMMyyyy HHmmss");
-       
-
 
 
         [OneTimeSetUp]
@@ -45,24 +42,13 @@ namespace AdvanceTask_NUnit.Global
             driver = new ChromeDriver();
             driver.Navigate().GoToUrl("http://localhost:5000");
             driver.Manage().Window.Maximize();
-            
-            // Can Add Wait,Initialize and call methods
-
-
-        }
-
-        [SetUp]
-        public void Initialize()
-        {
-            //Load Excel
-            ExcelUtil.PopulateInCollection(Base.excelPath, "LoginPage");
-
-            //OPen URL
-
-            driver.Navigate().GoToUrl(ExcelUtil.ReadData(2, "Url"));
+            Wait_Helpers.wait(10);
+                        
+           Login loginObj = new Login();
+           loginObj.LoginSteps();
 
         }
-              
+
 
 
         public class GetScreenShot
@@ -81,14 +67,14 @@ namespace AdvanceTask_NUnit.Global
 
 
 
-        [OneTimeTearDown]
-        public void Close()
-        {
+        //[OneTimeTearDown]
+        //public void Close()
+        //{
 
-            extentReportObj.Flush();
+           // extentReportObj.Flush();
            // driver.Quit();
 
-        }
+       // }
 
     }
 }

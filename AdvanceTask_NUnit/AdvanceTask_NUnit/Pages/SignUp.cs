@@ -11,6 +11,10 @@ namespace AdvanceTask_NUnit.Pages
 {
     internal class SignUp : Base
     {
+        internal SignUp()
+        {
+            ExcelUtil.PopulateInCollection(excelPath, "Registration");
+        }
 
         //Finding the Join 
         private IWebElement Join => driver.FindElement(By.XPath("//button[@class='ui green basic button']"));
@@ -40,7 +44,8 @@ namespace AdvanceTask_NUnit.Pages
         internal void Register()
         {
             //Populate the excel data
-            ExcelUtil.PopulateInCollection(Base.excelPath, "Registration");
+            
+
 
             //Click on Join button
             Thread.Sleep(3000);

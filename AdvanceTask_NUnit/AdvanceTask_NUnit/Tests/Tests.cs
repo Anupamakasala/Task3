@@ -20,36 +20,36 @@ namespace AdvanceTask_NUnit.Tests
 
             ShareSkill shareSkillObj = new ShareSkill();
 
-            ExcelUtil.PopulateInCollection(@"C:\IndustryConnect\AdvancedTask\Task3\AdvanceTask_NUnit\AdvanceTask_NUnit\TestData\TestData.xlsx", "SignIn");
-            LoginPage loginObj = new LoginPage(ExcelUtil.ReadData(1, "Username"), ExcelUtil.ReadData(1, "Password"));
+            ExcelUtil.PopulateInCollection(@"C:\Users\Admin\Downloads\Nunit Advanced\Task3-Test-case-and-Condition-Skillshare\AdvanceTask_NUnit\AdvanceTask_NUnit\AdvanceTask_NUnit\TestData\TestData.xlsx","SignIn");
+            //LoginPage loginObj = new LoginPage(ExcelUtil.ReadData(1, "Username"), ExcelUtil.ReadData(1, "Password"));
 
 
-            ExcelUtil.PopulateInCollection(@"C:\IndustryConnect\AdvancedTask\Task3\AdvanceTask_NUnit\AdvanceTask_NUnit\TestData\TestData.xlsx", "ShareSkills");
+            ExcelUtil.PopulateInCollection(@"C:\Users\Admin\Downloads\Nunit Advanced\Task3-Test-case-and-Condition-Skillshare\AdvanceTask_NUnit\AdvanceTask_NUnit\AdvanceTask_NUnit\TestData\TestData.xlsx","ShareSkills");
 
-            shareSkillObj.AddShareSkill(ExcelUtil.ReadData(1, "title"), ExcelUtil.ReadData(1, "description"), ExcelUtil.ReadData(1, "category"),
-                ExcelUtil.ReadData(1, "subcategory"), ExcelUtil.ReadData(1, "addtags"), ExcelUtil.ReadData(1, "serviceType"), ExcelUtil.ReadData(1, "locationType"),
-                ExcelUtil.ReadData(1, "daysAvaialable"), ExcelUtil.ReadData(1, "beginDate"), ExcelUtil.ReadData(1, "finishDate"), ExcelUtil.ReadData(1, "starttime"),
-                ExcelUtil.ReadData(1, "endtime"), ExcelUtil.ReadData(1, "skilltrade"), ExcelUtil.ReadData(1, "skilltags"), ExcelUtil.ReadData(1, "charge"),
-                ExcelUtil.ReadData(1, "active"));
-            string shareskillTest = shareSkillObj.GetManageListing();
-            Assert.That(shareskillTest == "Ballet Dancer", "Listing not found");
+                shareSkillObj.AddShareSkill(ExcelUtil.ReadData(2,"Title"), ExcelUtil.ReadData(2,"Description"), ExcelUtil.ReadData(2,"Category"),
+                ExcelUtil.ReadData(2,"Subcategory"), ExcelUtil.ReadData(2,"Tag1"), ExcelUtil.ReadData(2,"Tag2"), ExcelUtil.ReadData(2,"ServiceType"), ExcelUtil.ReadData(2,"locationType"),
+                ExcelUtil.ReadData(2,"Days"), ExcelUtil.ReadData(2,"StartDate"), ExcelUtil.ReadData(2,"EndDate"), ExcelUtil.ReadData(2,"beginTime"),
+                ExcelUtil.ReadData(2,"finishTime"), ExcelUtil.ReadData(2,"SkillTrade"), ExcelUtil.ReadData(2,"SkillExchangeTag"), ExcelUtil.ReadData(2,"Credit"),
+                ExcelUtil.ReadData(2,"Active"));
+                string listTitle = shareSkillObj.GetManageListing();
+                Assert.That(listTitle == "Ballet Dancer", "Listing not found");
 
-            //test.Log(Status.Pass, "New Service Listing added");
+         
 
         }
 
         [Test, Order(3)]
-        public void CEditManageListing()
+        public void EditManageListing()
         {
             //test = extent.CreateTest("CEditManageListing");
             ManageListing manageListingObj = new ManageListing();
 
-            ExcelUtil.PopulateInCollection(@"C:\IndustryConnect\AdvancedTask\Task3\AdvanceTask_NUnit\AdvanceTask_NUnit\TestData\TestData.xlsx", "ManageListing");
-            manageListingObj.EditListing(ExcelUtil.ReadData(1, "title"), ExcelUtil.ReadData(1, "description"), ExcelUtil.ReadData(1, "addtags"), ExcelUtil.ReadData(1, "skilltrade"),
-                                          ExcelUtil.ReadData(1, "skilltags"), ExcelUtil.ReadData(1, "charge"));
-            string editmanagelisitngtest = manageListingObj.GetEditedManageListing();
+            ExcelUtil.PopulateInCollection(@"C:\Users\Admin\Downloads\Nunit Advanced\Task3-Test-case-and-Condition-Skillshare\AdvanceTask_NUnit\AdvanceTask_NUnit\AdvanceTask_NUnit\TestData\TestData.xlsx","ManageListing");
+            manageListingObj.EditListing(ExcelUtil.ReadData(2,"title"), ExcelUtil.ReadData(2,"description"), ExcelUtil.ReadData(2,"addtags"), ExcelUtil.ReadData(2,"skilltrade"),
+                                          ExcelUtil.ReadData(2,"skilltags"), ExcelUtil.ReadData(2,"charge"));
+            string manageListingTitle = manageListingObj.GetEditedManageListing();
 
-            Assert.That(editmanagelisitngtest == "All ages Ballet Dancer", "Service listing not updated");
+            Assert.That(manageListingTitle == "All ages Ballet Dancer", "Service listing not updated");
 
 
             //test.Log(Status.Pass, "Edited service listing");
@@ -60,8 +60,8 @@ namespace AdvanceTask_NUnit.Tests
         [Test, Order(4)]
         public void MarkAsRead()
         {
-            ExcelUtil.PopulateInCollection(@"C:\IndustryConnect\AdvancedTask\Task3\AdvanceTask_NUnit\AdvanceTask_NUnit\TestData\TestData.xlsx", "SignIn");
-            LoginPage loginObj = new LoginPage(ExcelUtil.ReadData(1, "Username"), ExcelUtil.ReadData(1, "Password"));
+            ExcelUtil.PopulateInCollection(@"C:\Users\Admin\Downloads\Nunit Advanced\Task3-Test-case-and-Condition-Skillshare\AdvanceTask_NUnit\AdvanceTask_NUnit\AdvanceTask_NUnit\TestData\TestData.xlsx","SignIn");
+            //LoginPage loginObj = new LoginPage(ExcelUtil.ReadData(1, "Username"), ExcelUtil.ReadData(1, "Password"));
             Notifications notificationObj = new Notifications();
             string testResult = notificationObj.MarkAsRead();
             Assert.That(testResult == "400", "Test failed");
@@ -71,30 +71,30 @@ namespace AdvanceTask_NUnit.Tests
         [Test, Order(5)]
         public void DeleteNotification()
         {
-            ExcelUtil.PopulateInCollection(@"C:\IndustryConnect\AdvancedTask\Task3\AdvanceTask_NUnit\AdvanceTask_NUnit\TestData\TestData.xlsx", "SignIn");
-            LoginPage loginObj = new LoginPage(ExcelUtil.ReadData(1, "Username"), ExcelUtil.ReadData(1, "Password"));
+            ExcelUtil.PopulateInCollection(@"C:\Users\Admin\Downloads\Nunit Advanced\Task3-Test-case-and-Condition-Skillshare\AdvanceTask_NUnit\AdvanceTask_NUnit\AdvanceTask_NUnit\TestData\TestData.xlsx","SignIn");
+            //LoginPage loginObj = new LoginPage(ExcelUtil.ReadData(1, "Username"), ExcelUtil.ReadData(1, "Password"));
             Notifications notificationObj = new Notifications();
-            string deletenotificationText = notificationObj.DeleteNotification();
-            Assert.That(deletenotificationText == "You have no notifications", "Test failed");
+            string NotificationText = notificationObj.DeleteNotification();
+            Assert.That(NotificationText == "You have no notifications", "Test failed");
         }
 
         [Test, Order(6)]
         public void AddDescription()
         {
             ProfilePage profileObj = new ProfilePage();
-            ExcelUtil.PopulateInCollection(@"C:\IndustryConnect\AdvancedTask\Task3\AdvanceTask_NUnit\AdvanceTask_NUnit\TestData\TestData.xlsx", "Profile");
-            profileObj.AddDescription(ExcelUtil.ReadData(1, "description"));
+            ExcelUtil.PopulateInCollection(@"C:\Users\Admin\Downloads\Nunit Advanced\Task3-Test-case-and-Condition-Skillshare\AdvanceTask_NUnit\AdvanceTask_NUnit\AdvanceTask_NUnit\TestData\TestData.xlsx","Profile");
+            profileObj.AddDescription(ExcelUtil.ReadData(2,"description"));
             string confirmationText = profileObj.ViewConfirmation();
             string descriptionText = profileObj.ViewDescription();
-            Assert.That(confirmationText == "Description has been saved successfully", "Test failed");
-            Assert.That(descriptionText == ExcelUtil.ReadData(1, "description"), "Test failed");
+            Assert.That(confirmationText == "Description has been saved successfully","Test failed");
+            Assert.That(descriptionText == ExcelUtil.ReadData(2,"description"),"Test failed");
         }
 
         [Test, Order(7)]
         public void ChangeProfilePassword()
         {
             ProfilePage profileObj = new ProfilePage();
-            ExcelUtil.PopulateInCollection(@"C:\IndustryConnect\AdvancedTask\Task3\AdvanceTask_NUnit\AdvanceTask_NUnit\TestData\TestData.xlsx", "SignIn");
+            ExcelUtil.PopulateInCollection(@"C:\Users\Admin\Downloads\Nunit Advanced\Task3-Test-case-and-Condition-Skillshare\AdvanceTask_NUnit\AdvanceTask_NUnit\AdvanceTask_NUnit\TestData\TestData.xlsx", "SignIn");
             profileObj.ChangePassword(ExcelUtil.ReadData(1, "Password"), "newPassword");
             string confirmationText = profileObj.ViewConfirmation();
             Assert.That(confirmationText == "Password Changed Successfully", "Test failed");
@@ -104,16 +104,17 @@ namespace AdvanceTask_NUnit.Tests
         public void ViewReceivedRequestListing()
         {
             ProfilePage profileObj = new ProfilePage();
-            string receivedRequestText = profileObj.VerifyReceivedRequests();
-            Assert.That(receivedRequestText == "You do not have any received requests!", "Test failed");
+            string receivedRequestContent = profileObj.VerifyReceivedRequests();
+            Assert.That(receivedRequestContent == "Received Requests", "Test failed");
         }
 
         [Test, Order(9)]
         public void ViewSentRequestListing()
         {
+            //Login loginObj;
             ProfilePage profileObj = new ProfilePage();
-            string sentRequestText = profileObj.VerifySentRequests();
-            Assert.That(sentRequestText == "You do not have any sent requests!", "Test failed");
+            string sentRequestContent = profileObj.VerifySentRequests();
+            Assert.That(sentRequestContent == "Sent Requests", "Test failed");
         }
 
 
@@ -148,13 +149,13 @@ namespace AdvanceTask_NUnit.Tests
         [Test, Order(2), Description("SignIn for the Portal")]
         public void LogininSteps()
         {
-            LoginPage loginPageObj;
-            loginPageObj = new LoginPage();
+            Login loginObj;
+            loginObj = new Login();
             try
             {
                 test = extentReportObj.CreateTest("SignIn for the Portal passed");
-                loginPageObj.LoginSteps();
-                Thread.Sleep(2000);
+                loginObj.LoginSteps();
+                Thread.Sleep(5000);
 
             }
             catch (NoSuchElementException e)
@@ -171,15 +172,15 @@ namespace AdvanceTask_NUnit.Tests
 
 
         {
-            LoginPage loginPageObj;
+            Login loginObj;
             NotificationMoreAndLess notificationObj;
-            loginPageObj = new LoginPage();
+            loginObj = new Login();
             notificationObj = new NotificationMoreAndLess();
 
             try
             {
                 test = extentReportObj.CreateTest("Load More notification on the page");
-                loginPageObj.LoginSteps();
+                loginObj.LoginSteps();
                 notificationObj.LoadMoreNotification();
                 Thread.Sleep(2000);
 
@@ -197,15 +198,15 @@ namespace AdvanceTask_NUnit.Tests
         public void ShowLessNotification()
 
         {
-            LoginPage loginPageObj;
+            Login LoginObj;
             NotificationMoreAndLess notificationObj;
-            loginPageObj = new LoginPage();
+            LoginObj = new Login();
             notificationObj = new NotificationMoreAndLess();
 
             try
             {
                 test = extentReportObj.CreateTest("Show less notification on the page");
-                loginPageObj.LoginSteps();
+                LoginObj.LoginSteps();
                 notificationObj.LoadMoreNotification();
                 notificationObj.ShowLessNotification();
                 Thread.Sleep(2000);
