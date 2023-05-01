@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using AdvanceTask_NUnit.Pages;
 
 namespace AdvanceTask_NUnit.Global
 {
@@ -15,14 +16,20 @@ namespace AdvanceTask_NUnit.Global
     {
         public static IWebDriver driver;
 
-        // Define other objects here
-
+        // Define other objects here        
+        public static string excelPath = @"C:\Users\Admin\Downloads\Nunit Advanced\Task3-Test-case-and-Condition-Skillshare\AdvanceTask_NUnit\AdvanceTask_NUnit\AdvanceTask_NUnit\TestData\TestData.xlsx";
         public static ExtentReports extentReportObj = null;
         public static ExtentHtmlReporter htmlReporter;
         public static ExtentTest test;
+    
+
+
+
+
         static string reportPath = System.IO.Directory.GetParent(@"../../../").FullName +
         Path.DirectorySeparatorChar + "ExtentReports" +
         Path.DirectorySeparatorChar + "Result " + DateTime.Now.ToString("ddMMyyyy HHmmss");
+
 
         [OneTimeSetUp]
         public void LoginActions()
@@ -35,12 +42,13 @@ namespace AdvanceTask_NUnit.Global
             driver = new ChromeDriver();
             driver.Navigate().GoToUrl("http://localhost:5000");
             driver.Manage().Window.Maximize();
-            
-            // Can Add Wait,Initialize and call methods
-
+            Wait_Helpers.wait(10);
+                        
+           Login loginObj = new Login();
+           loginObj.LoginSteps();
 
         }
-              
+
 
 
         public class GetScreenShot
@@ -59,14 +67,14 @@ namespace AdvanceTask_NUnit.Global
 
 
 
-        [OneTimeTearDown]
-        public void Close()
-        {
+        //[OneTimeTearDown]
+        //public void Close()
+        //{
 
-            extentReportObj.Flush();
+           // extentReportObj.Flush();
            // driver.Quit();
 
-        }
+       // }
 
     }
 }
