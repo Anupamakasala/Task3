@@ -8,8 +8,11 @@
     ".NETCoreApp,Version=v6.0": {
       "AdvanceTask_NUnit/1.0.0": {
         "dependencies": {
+<<<<<<< HEAD
           "AutoItX.Dotnet": "3.3.14.5",
           "AutoItX3.Net": "3.3.16.1",
+=======
+>>>>>>> origin/Jyoti-Branch
           "DotNetSeleniumExtras.PageObjects": "3.11.0",
           "DotNetSeleniumExtras.PageObjects.Core": "4.3.0",
           "DotNetSeleniumExtras.WaitHelpers": "3.11.0",
@@ -29,6 +32,7 @@
           "AdvanceTask_NUnit.dll": {}
         }
       },
+<<<<<<< HEAD
       "AutoItX.Dotnet/3.3.14.5": {},
       "AutoItX3.Net/3.3.16.1": {
         "runtime": {
@@ -38,6 +42,8 @@
           }
         }
       },
+=======
+>>>>>>> origin/Jyoti-Branch
       "DnsClient/1.2.0": {
         "dependencies": {
           "System.Buffers": "4.5.0"
@@ -2215,6 +2221,7 @@
       "serviceable": false,
       "sha512": ""
     },
+<<<<<<< HEAD
     "AutoItX.Dotnet/3.3.14.5": {
       "type": "package",
       "serviceable": true,
@@ -2229,6 +2236,8 @@
       "path": "autoitx3.net/3.3.16.1",
       "hashPath": "autoitx3.net.3.3.16.1.nupkg.sha512"
     },
+=======
+>>>>>>> origin/Jyoti-Branch
     "DnsClient/1.2.0": {
       "type": "package",
       "serviceable": true,

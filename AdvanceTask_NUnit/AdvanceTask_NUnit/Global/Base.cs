@@ -71,7 +71,11 @@ namespace AdvanceTask_NUnit.Global
         //public void Close()
         //{
 
+<<<<<<< HEAD
            // extentReportObj.Flush();
+=======
+            extentReportObj.Flush();
+>>>>>>> origin/Jyoti-Branch
            // driver.Quit();
 
        // }

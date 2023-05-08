@@ -9992,11 +9992,16 @@
     ]
   },
   "packageFolders": {
+<<<<<<< HEAD
     "C:\\Users\\Admin\\.nuget\\packages\\": {}
+=======
+    "C:\\Users\\solan\\.nuget\\packages\\": {}
+>>>>>>> origin/Jyoti-Branch
   },
   "project": {
     "version": "1.0.0",
     "restore": {
+<<<<<<< HEAD
       "projectUniqueName": "C:\\Users\\Admin\\Downloads\\Nunit Advanced\\Task3-Test-case-and-Condition-Skillshare\\AdvanceTask_NUnit\\AdvanceTask_NUnit\\AdvanceTask_NUnit\\AdvanceTask_NUnit.csproj",
       "projectName": "AdvanceTask_NUnit",
       "projectPath": "C:\\Users\\Admin\\Downloads\\Nunit Advanced\\Task3-Test-case-and-Condition-Skillshare\\AdvanceTask_NUnit\\AdvanceTask_NUnit\\AdvanceTask_NUnit\\AdvanceTask_NUnit.csproj",
@@ -10005,6 +10010,16 @@
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+=======
+      "projectUniqueName": "C:\\Users\\solan\\Desktop\\Group Prject advance task\\Task 3\\Task3\\AdvanceTask_NUnit\\AdvanceTask_NUnit\\AdvanceTask_NUnit.csproj",
+      "projectName": "AdvanceTask_NUnit",
+      "projectPath": "C:\\Users\\solan\\Desktop\\Group Prject advance task\\Task 3\\Task3\\AdvanceTask_NUnit\\AdvanceTask_NUnit\\AdvanceTask_NUnit.csproj",
+      "packagesPath": "C:\\Users\\solan\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\solan\\Desktop\\Group Prject advance task\\Task 3\\Task3\\AdvanceTask_NUnit\\AdvanceTask_NUnit\\obj\\",
+      "projectStyle": "PackageReference",
+      "configFilePaths": [
+        "C:\\Users\\solan\\AppData\\Roaming\\NuGet\\NuGet.Config",
+>>>>>>> origin/Jyoti-Branch
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -10112,7 +10127,11 @@
             "privateAssets": "all"
           }
         },
+<<<<<<< HEAD
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.302\\RuntimeIdentifierGraph.json"
+=======
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
+>>>>>>> origin/Jyoti-Branch
       }
     }
   },
