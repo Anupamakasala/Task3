@@ -222,7 +222,7 @@ namespace AdvanceTask_NUnit.Tests
                 test.Fail(e.StackTrace);
             }
 
-=======
+//=======
         LoginPage loginPageobj;
         ProfilePage profilePageobj;
         EducationPage educationPageobj;
@@ -270,7 +270,198 @@ namespace AdvanceTask_NUnit.Tests
         {
 
             driver.Quit();
->>>>>>> origin/Jyoti-Branch
+//>>>>>>> origin/Jyoti-Branch
         }
+        }
+
+        /***********************************************************************
+        ** Added by Heather
+        ************************************************************************/
+        
+        [Test, Order(21)]
+        public void AddLanguage_Test()
+        {
+            // Profile page object initialization and definition
+            ProfilePage ProfilePageObj = new ProfilePage();
+            ProfilePageObj.GoToLanguageTab(driver);
+
+            string filePath = Environment.CurrentDirectory.ToString() + "\\ExcelData\\TestData.xlsx";
+            ExcelUtil.PopulateInCollection(filePath, "Languages");
+
+            string languageName = ExcelUtil.ReadData(2, "LanguageName");
+            string languageLevel = ExcelUtil.ReadData(2, "languageLevel");
+
+            LanguageTab LanguageTabObj = new LanguageTab();
+            LanguageTabObj.AddLanguage(driver, languageName, languageLevel);
+
+            //Console.WriteLine("languageName as input : " + languageName);
+            string newLang = LanguageTabObj.GetLangName(driver);
+            //Console.WriteLine("newLang get from table: " + newLang);
+            Assert.That(newLang == languageName, "Add Language Test Failed");
+        }
+
+        [Test, Order(22)]
+        public void EditLanguage_Test()
+        {
+            ProfilePage ProfilePageObj = new ProfilePage();
+            ProfilePageObj.GoToLanguageTab(driver);
+
+            string filePath = Environment.CurrentDirectory.ToString() + "\\ExcelData\\TestData.xlsx";
+            ExcelUtil.PopulateInCollection(filePath, "Languages");
+
+            string editLanguageName = ExcelUtil.ReadData(3, "LanguageName");
+            string editLanguageLevel = ExcelUtil.ReadData(3, "languageLevel");
+            
+            LanguageTab LanguageTabObj = new LanguageTab();
+            LanguageTabObj.EditLanguage(driver, editLanguageName, editLanguageLevel);
+
+            Console.WriteLine("1. editLanguageName: " + editLanguageName);
+
+            Thread.Sleep(10);
+            string GetEditedLang = LanguageTabObj.GetLangName(driver);
+            //Console.WriteLine("2. GetEditedLang : " + GetEditedLang);
+            Assert.That(GetEditedLang == editLanguageName, "Edit Language Test Failed");
+        }
+
+        [Test, Order(23)]
+        public void DeleteLang_Test()
+        {
+            // Profile page object initialization and definition
+            ProfilePage ProfilePageObj = new ProfilePage();
+            ProfilePageObj.GoToLanguageTab(driver);
+
+            LanguageTab LanguageTabObj = new LanguageTab();
+            LanguageTabObj.DeleteLang(driver);
+
+            //Assert notification
+            string notification = LanguageTabObj.DeleteLangConfirm(driver);
+            Assert.That(notification.Contains ("has been deleted from your languages"), "Delete language failed");
+            
+        }
+
+              [Test, Order(24)]
+        public void LocationElementExists()
+        {
+            ProfileExtra profileExtraObj = new ProfileExtra();
+            String text = profileExtraObj.LocationElement();
+            Assert.That(text == "Location", "Location element does not exist");
+        }
+
+        [Test, Order(25)]
+        public void AddAvailabilityTest() 
+        {
+            ProfileExtra profileExtraObj = new ProfileExtra();
+            string filePath = Environment.CurrentDirectory.ToString() + "\\ExcelData\\TestData.xlsx";
+            ExcelUtil.PopulateInCollection(filePath, "ProfileExtra");
+
+            string availability = ExcelUtil.ReadData(2, "Availability");
+            profileExtraObj.EditAvailability(availability);
+
+            string addedAvailability = profileExtraObj.GetAvailability();
+            Assert.That(addedAvailability == availability, "Add availability failed");
+        }
+
+        [Test, Order(26)]
+        public void EditAvailabilityTest()
+        {
+            ProfileExtra profileExtraObj = new ProfileExtra();
+            string filePath = Environment.CurrentDirectory.ToString() + "\\ExcelData\\TestData.xlsx";
+            ExcelUtil.PopulateInCollection(filePath, "ProfileExtra");
+
+            string availability = ExcelUtil.ReadData(3, "Availability");
+            profileExtraObj.EditAvailability(availability);
+
+            //Console.WriteLine("1.expected availability(input): " + availability);
+            string editedAvailability = profileExtraObj.GetAvailability();
+            //Console.WriteLine("2. actual editedAvailability Hours : " + editedAvailability);
+            Assert.That(editedAvailability == availability, "Edit availability failed");
+        }
+
+        [Test, Order(27)]
+        public void AddHoursTest() 
+        {
+            ProfileExtra profileExtraObj = new ProfileExtra();
+            string filePath = Environment.CurrentDirectory.ToString() + "\\ExcelData\\TestData.xlsx";
+            ExcelUtil.PopulateInCollection(filePath, "ProfileExtra");
+
+            string hours = ExcelUtil.ReadData(2, "Hours");
+            profileExtraObj.EditHours(hours);
+            
+            string addedHours = profileExtraObj.GetHours();          
+            Assert.That(addedHours == hours, "Add Hours failed");
+        }
+
+        [Test, Order(28)]
+        public void EditHoursTest()
+        {
+            ProfileExtra profileExtraObj = new ProfileExtra();
+            string filePath = Environment.CurrentDirectory.ToString() + "\\ExcelData\\TestData.xlsx";
+            ExcelUtil.PopulateInCollection(filePath, "ProfileExtra");
+
+            string hours = ExcelUtil.ReadData(3, "Hours");
+            profileExtraObj.EditHours(hours);
+
+            string editedHours = profileExtraObj.GetHours();
+            Assert.That(editedHours == hours, "Edit Hours failed");
+        }
+
+        [Test, Order(29)]
+        public void AddEarnTargetTest()
+        {
+            ProfileExtra profileExtraObj = new ProfileExtra();
+            string filePath = Environment.CurrentDirectory.ToString() + "\\ExcelData\\TestData.xlsx";
+            ExcelUtil.PopulateInCollection(filePath, "ProfileExtra");
+
+            string earnTarget = ExcelUtil.ReadData(2, "EarnTarget");
+            profileExtraObj.EditEarnTarget(earnTarget);
+
+            string addedEarnTarget = profileExtraObj.GetEarnTarget();
+            Assert.That(addedEarnTarget == earnTarget, "Add EarnTarget failed");
+        }
+
+        [Test, Order(30)]
+        public void EditEarnTargetTest()
+        {
+            ProfileExtra profileExtraObj = new ProfileExtra();
+            string filePath = Environment.CurrentDirectory.ToString() + "\\ExcelData\\TestData.xlsx";
+            ExcelUtil.PopulateInCollection(filePath, "ProfileExtra");
+
+            string earnTarget = ExcelUtil.ReadData(3, "EarnTarget");
+            profileExtraObj.EditEarnTarget(earnTarget);
+
+            string editedEarnTarget = profileExtraObj.GetEarnTarget();
+            Assert.That(editedEarnTarget == earnTarget, "Edit EarnTarget failed");
+        }
+
+         [Test, Order(31)]
+        public void SelectAllNotificationsTest() 
+        {
+            Notification notificationObj = new Notification();
+            bool isSelected = notificationObj.SelectAllNotifications(driver);
+            Assert.IsTrue(isSelected);
+        }
+
+
+        [Test, Order(32)]
+        public void UnselectNotificationsTest()
+        {
+            Notification notificationObj = new Notification();
+            bool isSelected = notificationObj.UnselectNotifications(driver);
+            Assert.IsFalse(isSelected);
+        }
+
+        [Test, Order(33)]
+        public void SendChatMsgTest()
+        {
+            Chat chatObj = new Chat();
+            string filePath = Environment.CurrentDirectory.ToString() + "\\ExcelData\\TestData.xlsx";
+            ExcelUtil.PopulateInCollection(filePath, "Chat");
+            string message = ExcelUtil.ReadData(2, "Message");
+            chatObj.SendChatMsg(driver, message);
+
+            string latestMsg = chatObj.getChatMsg();
+            Assert.That(latestMsg == message, "Meaasge not sent");
+        }
+
     }
 }
