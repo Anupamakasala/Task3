@@ -13,14 +13,14 @@ namespace AdvanceTask_NUnit.Tests
     [TestFixture]
     public class TestsCertifications : Base
     {
-        Certifications CertObj;        
+        Certifications certObj;        
         string screenShotPath;
 
 
         public TestsCertifications()
         {
 
-            CertObj = new Certifications();
+            certObj = new Certifications();
 
            
         }
@@ -30,13 +30,13 @@ namespace AdvanceTask_NUnit.Tests
         public void AddCertfication()
         {
             
-            CertObj.ClickCertificationTab();
-            CertObj.CertificationSteps();
-            CertObj.CertificationAdd();
+            certObj.ClickCertificationTab();
+            certObj.CertificationSteps();
+            certObj.CertificationAdd();
 
-            string newCertText = CertObj.GetCertificate();
+            string newCertText = certObj.GetCertificate();
             Console.WriteLine(newCertText);
-            string originalCertText = CertObj.GetCertificateFromExcel();
+            string originalCertText = certObj.GetCertificateFromExcel();
             Console.WriteLine(originalCertText);
             screenShotPath = GetScreenShot.Capture(driver, "ScreenShotName");
             
@@ -63,18 +63,18 @@ namespace AdvanceTask_NUnit.Tests
         [Test, Order(2)]
         public void UpdateCertification()
         {
-            CertObj.ClickCertificationTab();
-            CertObj.UpdateCertificationSteps();
-            CertObj.CertificationUpdate();
+            certObj.ClickCertificationTab();
+            certObj.UpdateCertificationSteps();
+            certObj.CertificationUpdate();
 
-            string NewUpdatedCertificate = CertObj.GetUpdatedCertificate();
-            string originalUpdatedCertText = CertObj.GetUpdatedCertificateFromExcel();
+            string newUpdatedCertificate = certObj.GetUpdatedCertificate();
+            string originalUpdatedCertText = certObj.GetUpdatedCertificateFromExcel();
             screenShotPath = GetScreenShot.Capture(driver, "ScreenShotName");
 
             
             //Verify Update
 
-            if (NewUpdatedCertificate == originalUpdatedCertText)
+            if (newUpdatedCertificate == originalUpdatedCertText)
             {
                 test = extentReportObj.CreateTest("Create Skill", " Create new Skills").AddScreenCaptureFromPath(screenShotPath);
                 test.Log(Status.Info, "Certifications  record is updated successfully");
@@ -97,15 +97,15 @@ namespace AdvanceTask_NUnit.Tests
         public void DeleteCertification()
         {
                     
-            string DeletedCertificateText = CertObj.GetDeleteCertificate();
-            string orginalUpdatedCertText = CertObj.GetUpdatedCertificateFromExcel();
+            string deletedCertificateText = certObj.GetDeleteCertificate();
+            string orginalUpdatedCertText = certObj.GetUpdatedCertificateFromExcel();
             screenShotPath = GetScreenShot.Capture(driver, "ScreenShotName");
 
-            CertObj.DeleteCertificate();
+            certObj.DeleteCertificate();
 
             //Verify Delete
 
-            if (DeletedCertificateText == orginalUpdatedCertText)
+            if (deletedCertificateText == orginalUpdatedCertText)
             {
                 test = extentReportObj.CreateTest("Delete Certifications", " Delete existing Certifications").AddScreenCaptureFromPath(screenShotPath);
                 test.Log(Status.Info, "Certifications record is NOT Deleted");

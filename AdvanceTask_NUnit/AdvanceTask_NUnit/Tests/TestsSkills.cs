@@ -27,8 +27,8 @@ namespace AdvanceTask_NUnit.Tests
         [Test, Order(1)]
         public void AddSkills()
         {
-            skillObj.clickSkillTab();
-            skillObj.createSkillSteps();
+            skillObj.ClickSkillTab();
+            skillObj.CreateSkillSteps();
             skillObj.SkillsAdd();
 
 
@@ -62,7 +62,7 @@ namespace AdvanceTask_NUnit.Tests
         
         public void UpdateSkills()
         {
-            skillObj.clickSkillTab();
+            skillObj.ClickSkillTab();
             skillObj.UpdateSkillSteps();
             skillObj.SkillUpdate();
 

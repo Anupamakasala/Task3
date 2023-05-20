@@ -18,6 +18,7 @@ namespace AdvanceTask_NUnit.Global
 
         // Define other objects here
 
+        public static string excelPath = @"D:\Advanced_Tasks\Task3\AdvanceTask_NUnit\AdvanceTask_NUnit\TestData\TestData.xlsx";
         public static ExtentReports extentReportObj = null;
         public static ExtentHtmlReporter htmlReporter;
         public static ExtentTest test;

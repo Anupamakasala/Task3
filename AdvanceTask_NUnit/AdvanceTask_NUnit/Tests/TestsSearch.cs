@@ -37,11 +37,28 @@ namespace AdvanceTask_NUnit.Tests
                 srch.ClickRefresh();
                 srch.ClickSearchSkillInner();
                 srch.Filters();
-                
-                screenShotPath = GetScreenShot.Capture(driver, "ScreenShotName");
-                test = extentReportObj.CreateTest("Serach Skills", "Searching a Skill").AddScreenCaptureFromPath(screenShotPath);
-                test.Log(Status.Info, "Skill search results");
-                test.Log(Status.Pass, "Test passed");
+
+
+                string refine = srch.VerifySearch();
+                string boldPt = srch.BoldClickCategory();
+                string boldQa = srch.BoldClickSubCategory();
+
+                if ((refine == "Refine Results") && (boldPt == "400") && (boldQa == "400"))
+                {
+
+                    screenShotPath = GetScreenShot.Capture(driver, "ScreenShotName");
+                    test = extentReportObj.CreateTest("Search a Skill", " Searching skills and applying Filters").AddScreenCaptureFromPath(screenShotPath);
+                    test.Log(Status.Info, "Searching the skills for transaction");
+                    test.Log(Status.Pass, "Test passed");
+                    Assert.Pass("Pass");
+                }
+                else
+                {
+                    test = extentReportObj.CreateTest("Search a Skill", " Searching skills and applying Filters").AddScreenCaptureFromPath(screenShotPath);
+                    test.Log(Status.Info, "Searching the skills for transaction");
+                    test.Log(Status.Fail, "OOPs! Search Skill Test Failed");
+                    Assert.Fail("OOps! Test Fail");
+                }             
                 
             }
 
