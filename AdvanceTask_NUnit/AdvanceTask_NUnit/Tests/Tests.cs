@@ -25,7 +25,11 @@ namespace AdvanceTask_NUnit.Tests
 
             ShareSkill shareSkillObj = new ShareSkill();
 
+<<<<<<< HEAD
+            ExcelUtil.PopulateInCollection(@"C:\IndustryConnect\AdvancedTask\Task3\AdvanceTask_NUnit\AdvanceTask_NUnit\TestData\TestData.xlsx", "SignIn");
+=======
             ExcelUtil.PopulateInCollection(@"C:\Users\Admin\Downloads\Nunit Advanced\Task3-Test-case-and-Condition-Skillshare\AdvanceTask_NUnit\AdvanceTask_NUnit\AdvanceTask_NUnit\TestData\TestData.xlsx","SignIn");
+>>>>>>> be38c4ae7b920d285aa4cebcf8d37f2f05f762c6
             //LoginPage loginObj = new LoginPage(ExcelUtil.ReadData(1, "Username"), ExcelUtil.ReadData(1, "Password"));
 
 
@@ -65,7 +69,11 @@ namespace AdvanceTask_NUnit.Tests
         [Test, Order(4)]
         public void MarkAsRead()
         {
+<<<<<<< HEAD
+            ExcelUtil.PopulateInCollection(@"C:\IndustryConnect\AdvancedTask\Task3\AdvanceTask_NUnit\AdvanceTask_NUnit\TestData\TestData.xlsx", "SignIn");
+=======
             ExcelUtil.PopulateInCollection(@"C:\Users\Admin\Downloads\Nunit Advanced\Task3-Test-case-and-Condition-Skillshare\AdvanceTask_NUnit\AdvanceTask_NUnit\AdvanceTask_NUnit\TestData\TestData.xlsx","SignIn");
+>>>>>>> be38c4ae7b920d285aa4cebcf8d37f2f05f762c6
             //LoginPage loginObj = new LoginPage(ExcelUtil.ReadData(1, "Username"), ExcelUtil.ReadData(1, "Password"));
             Notifications notificationObj = new Notifications();
             string testResult = notificationObj.MarkAsRead();
@@ -76,7 +84,11 @@ namespace AdvanceTask_NUnit.Tests
         [Test, Order(5)]
         public void DeleteNotification()
         {
+<<<<<<< HEAD
+            ExcelUtil.PopulateInCollection(@"C:\IndustryConnect\AdvancedTask\Task3\AdvanceTask_NUnit\AdvanceTask_NUnit\TestData\TestData.xlsx", "SignIn");
+=======
             ExcelUtil.PopulateInCollection(@"C:\Users\Admin\Downloads\Nunit Advanced\Task3-Test-case-and-Condition-Skillshare\AdvanceTask_NUnit\AdvanceTask_NUnit\AdvanceTask_NUnit\TestData\TestData.xlsx","SignIn");
+>>>>>>> be38c4ae7b920d285aa4cebcf8d37f2f05f762c6
             //LoginPage loginObj = new LoginPage(ExcelUtil.ReadData(1, "Username"), ExcelUtil.ReadData(1, "Password"));
             Notifications notificationObj = new Notifications();
             string NotificationText = notificationObj.DeleteNotification();
@@ -154,8 +166,13 @@ namespace AdvanceTask_NUnit.Tests
         [Test, Order(2), Description("SignIn for the Portal")]
         public void LogininSteps()
         {
+<<<<<<< HEAD
+            Login loginPageObj;
+            loginPageObj = new Login();
+=======
             Login loginObj;
             loginObj = new Login();
+>>>>>>> be38c4ae7b920d285aa4cebcf8d37f2f05f762c6
             try
             {
                 test = extentReportObj.CreateTest("SignIn for the Portal passed");
@@ -177,9 +194,15 @@ namespace AdvanceTask_NUnit.Tests
 
 
         {
+<<<<<<< HEAD
+            Login loginPageObj;
+            NotificationMoreAndLess notificationObj;
+            loginPageObj = new Login();
+=======
             Login loginObj;
             NotificationMoreAndLess notificationObj;
             loginObj = new Login();
+>>>>>>> be38c4ae7b920d285aa4cebcf8d37f2f05f762c6
             notificationObj = new NotificationMoreAndLess();
 
             try
@@ -203,9 +226,15 @@ namespace AdvanceTask_NUnit.Tests
         public void ShowLessNotification()
 
         {
+<<<<<<< HEAD
+            Login loginPageObj;
+            NotificationMoreAndLess notificationObj;
+            loginPageObj = new Login();
+=======
             Login LoginObj;
             NotificationMoreAndLess notificationObj;
             LoginObj = new Login();
+>>>>>>> be38c4ae7b920d285aa4cebcf8d37f2f05f762c6
             notificationObj = new NotificationMoreAndLess();
 
             try

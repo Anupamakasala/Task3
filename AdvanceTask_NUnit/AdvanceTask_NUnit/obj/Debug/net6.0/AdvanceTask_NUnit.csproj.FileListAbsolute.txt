@@ -6,6 +6,8 @@ C:\Users\Admin\Downloads\Nunit Advanced\Task3-Test-case-and-Condition-Skillshare
 C:\Users\Admin\Downloads\Nunit Advanced\Task3-Test-case-and-Condition-Skillshare\AdvanceTask_NUnit\Task3\AdvanceTask_NUnit\AdvanceTask_NUnit\obj\Debug\net6.0\AdvanceTask_NUnit.AssemblyInfo.cs
 C:\Users\Admin\Downloads\Nunit Advanced\Task3-Test-case-and-Condition-Skillshare\AdvanceTask_NUnit\Task3\AdvanceTask_NUnit\AdvanceTask_NUnit\obj\Debug\net6.0\AdvanceTask_NUnit.csproj.CoreCompileInputs.cache
 <<<<<<< HEAD
+=======
+<<<<<<< HEAD
 C:\Users\Admin\Downloads\Nunit Advanced\Task3-Test-case-and-Condition-Skillshare\AdvanceTask_NUnit\AdvanceTask_NUnit\AdvanceTask_NUnit\obj\Debug\net6.0\AdvanceTask_NUnit.csproj.AssemblyReference.cache
 C:\Users\Admin\Downloads\Nunit Advanced\Task3-Test-case-and-Condition-Skillshare\AdvanceTask_NUnit\AdvanceTask_NUnit\AdvanceTask_NUnit\obj\Debug\net6.0\Interop.AutoItX3Lib.dll
 C:\Users\Admin\Downloads\Nunit Advanced\Task3-Test-case-and-Condition-Skillshare\AdvanceTask_NUnit\AdvanceTask_NUnit\AdvanceTask_NUnit\obj\Debug\net6.0\AdvanceTask_NUnit.csproj.ResolveComReference.cache
@@ -189,6 +191,7 @@ C:\Users\Admin\Downloads\Nunit Advanced\Task3-Test-case-and-Condition-Skillshare
 C:\Users\Admin\Downloads\Nunit Advanced\Task3-Test-case-and-Condition-Skillshare\AdvanceTask_NUnit\AdvanceTask_NUnit\AdvanceTask_NUnit\obj\Debug\net6.0\AdvanceTask_NUnit.genruntimeconfig.cache
 C:\Users\Admin\Downloads\Nunit Advanced\Task3-Test-case-and-Condition-Skillshare\AdvanceTask_NUnit\AdvanceTask_NUnit\AdvanceTask_NUnit\obj\Debug\net6.0\ref\AdvanceTask_NUnit.dll
 =======
+>>>>>>> be38c4ae7b920d285aa4cebcf8d37f2f05f762c6
 D:\Advanced_Tasks\Task3\AdvanceTask_NUnit\AdvanceTask_NUnit\bin\Debug\net6.0\testhost.dll
 D:\Advanced_Tasks\Task3\AdvanceTask_NUnit\AdvanceTask_NUnit\bin\Debug\net6.0\testhost.exe
 D:\Advanced_Tasks\Task3\AdvanceTask_NUnit\AdvanceTask_NUnit\bin\Debug\net6.0\NUnit3.TestAdapter.dll
@@ -366,12 +369,17 @@ D:\Advanced_Tasks\Task3\AdvanceTask_NUnit\AdvanceTask_NUnit\obj\Debug\net6.0\Adv
 D:\Advanced_Tasks\Task3\AdvanceTask_NUnit\AdvanceTask_NUnit\obj\Debug\net6.0\AdvanceTask_NUnit.AssemblyInfo.cs
 D:\Advanced_Tasks\Task3\AdvanceTask_NUnit\AdvanceTask_NUnit\obj\Debug\net6.0\AdvanceTask_NUnit.csproj.CoreCompileInputs.cache
 <<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> be38c4ae7b920d285aa4cebcf8d37f2f05f762c6
 D:\Advanced_Tasks\Task3\AdvanceTask_NUnit\AdvanceTask_NUnit\obj\Debug\net6.0\AdvanceTask_NUnit.csproj.CopyComplete
 D:\Advanced_Tasks\Task3\AdvanceTask_NUnit\AdvanceTask_NUnit\obj\Debug\net6.0\AdvanceTask_NUnit.dll
 D:\Advanced_Tasks\Task3\AdvanceTask_NUnit\AdvanceTask_NUnit\obj\Debug\net6.0\refint\AdvanceTask_NUnit.dll
 D:\Advanced_Tasks\Task3\AdvanceTask_NUnit\AdvanceTask_NUnit\obj\Debug\net6.0\AdvanceTask_NUnit.pdb
 D:\Advanced_Tasks\Task3\AdvanceTask_NUnit\AdvanceTask_NUnit\obj\Debug\net6.0\AdvanceTask_NUnit.genruntimeconfig.cache
 D:\Advanced_Tasks\Task3\AdvanceTask_NUnit\AdvanceTask_NUnit\obj\Debug\net6.0\ref\AdvanceTask_NUnit.dll
+<<<<<<< HEAD
+=======
 >>>>>>> a3d005d2022efff069c4bc113568f550c6c9fee6
 =======
 C:\Users\solan\Desktop\Group Prject advance task\Task 3\Task3\AdvanceTask_NUnit\AdvanceTask_NUnit\obj\Debug\net6.0\AdvanceTask_NUnit.csproj.AssemblyReference.cache
@@ -552,3 +560,4 @@ C:\Users\solan\Desktop\Group Prject advance task\Task 3\Task3\AdvanceTask_NUnit\
 C:\Users\solan\Desktop\Group Prject advance task\Task 3\Task3\AdvanceTask_NUnit\AdvanceTask_NUnit\obj\Debug\net6.0\AdvanceTask_NUnit.genruntimeconfig.cache
 C:\Users\solan\Desktop\Group Prject advance task\Task 3\Task3\AdvanceTask_NUnit\AdvanceTask_NUnit\obj\Debug\net6.0\ref\AdvanceTask_NUnit.dll
 >>>>>>> origin/Jyoti-Branch
+>>>>>>> be38c4ae7b920d285aa4cebcf8d37f2f05f762c6

@@ -12,7 +12,12 @@
           "AutoItX.Dotnet": "3.3.14.5",
           "AutoItX3.Net": "3.3.16.1",
 =======
+<<<<<<< HEAD
+          "AutoItX.Dotnet": "3.3.14.5",
+          "AutoItX3.Net": "3.3.16.1",
+=======
 >>>>>>> origin/Jyoti-Branch
+>>>>>>> be38c4ae7b920d285aa4cebcf8d37f2f05f762c6
           "DotNetSeleniumExtras.PageObjects": "3.11.0",
           "DotNetSeleniumExtras.PageObjects.Core": "4.3.0",
           "DotNetSeleniumExtras.WaitHelpers": "3.11.0",
@@ -33,6 +38,9 @@
         }
       },
 <<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> be38c4ae7b920d285aa4cebcf8d37f2f05f762c6
       "AutoItX.Dotnet/3.3.14.5": {},
       "AutoItX3.Net/3.3.16.1": {
         "runtime": {
@@ -42,8 +50,11 @@
           }
         }
       },
+<<<<<<< HEAD
+=======
 =======
 >>>>>>> origin/Jyoti-Branch
+>>>>>>> be38c4ae7b920d285aa4cebcf8d37f2f05f762c6
       "DnsClient/1.2.0": {
         "dependencies": {
           "System.Buffers": "4.5.0"
@@ -2222,6 +2233,9 @@
       "sha512": ""
     },
 <<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> be38c4ae7b920d285aa4cebcf8d37f2f05f762c6
     "AutoItX.Dotnet/3.3.14.5": {
       "type": "package",
       "serviceable": true,
@@ -2236,8 +2250,11 @@
       "path": "autoitx3.net/3.3.16.1",
       "hashPath": "autoitx3.net.3.3.16.1.nupkg.sha512"
     },
+<<<<<<< HEAD
+=======
 =======
 >>>>>>> origin/Jyoti-Branch
+>>>>>>> be38c4ae7b920d285aa4cebcf8d37f2f05f762c6
     "DnsClient/1.2.0": {
       "type": "package",
       "serviceable": true,

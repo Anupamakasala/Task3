@@ -15,39 +15,38 @@ namespace AdvanceTask_NUnit.Pages
     {
         public Certifications()
         {
-            ExcelUtil.PopulateInCollection(@"D:\Advanced_Tasks\Task3\AdvanceTask_NUnit\AdvanceTask_NUnit\TestData\TestData.xlsx", "Certifications");
+            ExcelUtil.PopulateInCollection(excelPath, "Certifications");
         }
 
-        IWebElement CertificationTab => driver.FindElement(By.XPath("//a[contains(text(),'Certifications')]"));
-        IWebElement CertAddnewButton => driver.FindElement(By.XPath("//div[@data-tab='fourth']/div[1]/div[2]/div/table/thead/tr/th[4]/div"));
+        IWebElement certificationTab => driver.FindElement(By.XPath("//a[contains(text(),'Certifications')]"));
+        IWebElement certAddNewButton => driver.FindElement(By.XPath("//div[@data-tab='fourth']/div[1]/div[2]/div/table/thead/tr/th[4]/div"));
         IWebElement certificateTextbox => driver.FindElement(By.Name("certificationName"));
         IWebElement certificatefromTextbox => driver.FindElement(By.Name("certificationFrom"));
         IWebElement certificateAddButton => driver.FindElement(By.XPath("//input [@type ='button' and @value='Add']"));
-        IWebElement CertificateText => driver.FindElement(By.XPath("//div[@data-tab=\"fourth\"]/div/div/div/table/tbody[last()]/tr/td[1]"));
-        IWebElement CertificateFromText => driver.FindElement(By.XPath("//div[@class ='form-wrapper']/table/ tbody[last()]/tr/td[2]"));
-        IWebElement CertificateYearText => driver.FindElement(By.XPath("//div[@class ='form-wrapper']/table/ tbody[last()]/tr/td[3]"));
-        IWebElement EditCertificateIcon => driver.FindElement(By.XPath("//div[@data-tab='fourth']/div/div[2]/div/table/tbody[last()]/tr/td[4]/span[1]"));
-        IWebElement EditCertificate => driver.FindElement(By.Name("certificationName"));
-        IWebElement EditCertificateFrom => driver.FindElement(By.Name("certificationFrom"));
-        IWebElement CertificateUpdateButton => driver.FindElement(By.XPath("//input[@type='button' and @value='Update']"));
-        IWebElement NewUpdatedCertificate => driver.FindElement(By.XPath("//div[@data-tab='fourth']/div/div/div/table/tbody[last()]/tr/td[1]"));
-        IWebElement DeleteCertificateIcon => driver.FindElement(By.XPath("//div[@data-tab='fourth']/div/div[2]/div/table/tbody[last()]/tr/td[4]/span[2]/i"));
-        IWebElement DeletedCertificateText => driver.FindElement(By.XPath("//div[@class='form-wrapper']/table/tbody[last()]/tr[1]/td[1]"));
+        IWebElement certificateText => driver.FindElement(By.XPath("//div[@data-tab=\"fourth\"]/div/div/div/table/tbody[last()]/tr/td[1]"));
+        IWebElement certificateFromText => driver.FindElement(By.XPath("//div[@class ='form-wrapper']/table/ tbody[last()]/tr/td[2]"));
+        IWebElement certificateYearText => driver.FindElement(By.XPath("//div[@class ='form-wrapper']/table/ tbody[last()]/tr/td[3]"));
+        IWebElement editCertificateIcon => driver.FindElement(By.XPath("//div[@data-tab='fourth']/div/div[2]/div/table/tbody[last()]/tr/td[4]/span[1]"));
+        IWebElement editCertificate => driver.FindElement(By.Name("certificationName"));
+        IWebElement editCertificateFrom => driver.FindElement(By.Name("certificationFrom"));
+        IWebElement certificateUpdateButton => driver.FindElement(By.XPath("//input[@type='button' and @value='Update']"));
+        IWebElement newUpdatedCertificate => driver.FindElement(By.XPath("//div[@data-tab='fourth']/div/div/div/table/tbody[last()]/tr/td[1]"));
+        IWebElement deleteCertificateIcon => driver.FindElement(By.XPath("//div[@data-tab='fourth']/div/div[2]/div/table/tbody[last()]/tr/td[4]/span[2]/i"));
+        IWebElement deletedCertificateText => driver.FindElement(By.XPath("//div[@class='form-wrapper']/table/tbody[last()]/tr[1]/td[1]"));
 
         //Add Certification            
 
         public void ClickCertificationTab()
         {
             
-        CertificationTab.Click();
+        certificationTab.Click();
         }
 
         public void CertificationSteps()
         {
 
-            CertAddnewButton.Click();
-            //ExcelUtil.PopulateInCollection(@"D:\Advanced_Tasks\Task3\AdvanceTask_NUnit\AdvanceTask_NUnit\TestData\TestData.xlsx", "Certifications");
-
+            certAddNewButton.Click();
+            
             certificateTextbox.SendKeys(ExcelUtil.ReadData(2, "Certificate"));
             certificatefromTextbox.SendKeys(ExcelUtil.ReadData(2, "From"));
             SelectElement Certificateyear = new SelectElement(driver.FindElement(By.Name("certificationYear")));
@@ -62,13 +61,13 @@ namespace AdvanceTask_NUnit.Pages
 
         public string GetCertificateFromExcel()
         {            
-            string CertificateFromExcel = (ExcelUtil.ReadData(2, "Certificate"));
-            return CertificateFromExcel;
+            string certificateFromExcel = (ExcelUtil.ReadData(2, "Certificate"));
+            return certificateFromExcel;
 
         }
         public string GetCertificate()
         {
-            return CertificateText.Text;
+            return certificateText.Text;
 
         }
 
@@ -78,17 +77,17 @@ namespace AdvanceTask_NUnit.Pages
         {
             //CertificationTab.Click();
             Wait_Helpers.WaitToBeVisible(driver, "XPath", "//div[@data-tab='fourth']/div/div/div/table/tbody[last()]/tr/td[1]", 10);
-            EditCertificateIcon.Click();
-            EditCertificate.Clear();
-            EditCertificate.SendKeys(ExcelUtil.ReadData(3, "Certificate"));
-            EditCertificateFrom.Clear();
-            EditCertificateFrom.SendKeys(ExcelUtil.ReadData(3, "From"));
-            SelectElement EditCertificateyear = new SelectElement(driver.FindElement(By.Name("certificationYear")));
-            EditCertificateyear.SelectByValue(ExcelUtil.ReadData(3, "Year"));
+            editCertificateIcon.Click();
+            editCertificate.Clear();
+            editCertificate.SendKeys(ExcelUtil.ReadData(3, "Certificate"));
+            editCertificateFrom.Clear();
+            editCertificateFrom.SendKeys(ExcelUtil.ReadData(3, "From"));
+            SelectElement editCertificateYear = new SelectElement(driver.FindElement(By.Name("certificationYear")));
+            editCertificateYear.SelectByValue(ExcelUtil.ReadData(3, "Year"));
         }
             public void CertificationUpdate()
             { 
-            CertificateUpdateButton.Click();
+            certificateUpdateButton.Click();
             Wait_Helpers.WaitToBeVisible(driver, "XPath", "//div[@data-tab='fourth']/div/div/div/table/tbody[last()]/tr/td[1]", 10);
                        
            }
@@ -96,13 +95,13 @@ namespace AdvanceTask_NUnit.Pages
         public string GetUpdatedCertificate()
         {
             Thread.Sleep(5000);
-            return NewUpdatedCertificate.Text;
+            return newUpdatedCertificate.Text;
         }
 
         public string GetUpdatedCertificateFromExcel()
         {
-            string CertificateUpdatedFromExcel = ExcelUtil.ReadData(3, "Certificate");
-            return CertificateUpdatedFromExcel;
+            string certificateUpdatedFromExcel = ExcelUtil.ReadData(3, "Certificate");
+            return certificateUpdatedFromExcel;
 
         }
 
@@ -111,16 +110,16 @@ namespace AdvanceTask_NUnit.Pages
         //Delete Certificate Record
         public void DeleteCertificate()
         {
-            CertificationTab.Click();
+            certificationTab.Click();
             Wait_Helpers.WaitToExist(driver, "XPath", "//div[@class='form-wrapper']/table/ tbody/tr/td[1]", 10);
-            DeleteCertificateIcon.Click();
+            deleteCertificateIcon.Click();
             Thread.Sleep(5000);
         }
 
         public string GetDeleteCertificate()
         {
 
-            return DeletedCertificateText.Text;
+            return deletedCertificateText.Text;
 
         }
 

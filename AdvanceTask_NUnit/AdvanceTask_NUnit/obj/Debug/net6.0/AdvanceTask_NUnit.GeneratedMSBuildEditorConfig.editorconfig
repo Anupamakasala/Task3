@@ -8,8 +8,4 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = AdvanceTask_NUnit
-<<<<<<< HEAD
-build_property.ProjectDir = C:\Users\Admin\Downloads\Nunit Advanced\Task3-Test-case-and-Condition-Skillshare\AdvanceTask_NUnit\AdvanceTask_NUnit\AdvanceTask_NUnit\
-=======
-build_property.ProjectDir = C:\Users\solan\Desktop\Group Prject advance task\Task 3\Task3\AdvanceTask_NUnit\AdvanceTask_NUnit\
->>>>>>> origin/Jyoti-Branch
+build_property.ProjectDir = D:\Advanced_Tasks\Task3\AdvanceTask_NUnit\AdvanceTask_NUnit\

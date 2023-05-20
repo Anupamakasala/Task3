@@ -14,7 +14,7 @@ namespace AdvanceTask_NUnit.Pages
     {
         public Login()
         {
-           ExcelUtil.PopulateInCollection(excelPath, "SignIn");
+            ExcelUtil.PopulateInCollection(excelPath, "SignIn");
         }
         IWebElement SignInButton => driver.FindElement(By.XPath("/html/body/div/div/div/div/div/div[1]/div/a"));
         IWebElement UserNameTextbox => driver.FindElement(By.Name("email"));
@@ -45,7 +45,7 @@ namespace AdvanceTask_NUnit.Pages
 
             //Click on the Login Button
             LoginButton.Click();
-            
+
 
         }
 
