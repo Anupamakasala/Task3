@@ -14,8 +14,9 @@ namespace AdvanceTask_NUnit.Pages
     {
         public static IWebElement notificationTab => driver.FindElement(By.XPath("//div[1]/div[2]/div/div"));
         public static IWebElement seeAllElement => driver.FindElement(By.XPath("//a[@href='/Account/Dashboard']"));
-        public static IWebElement checkBox => driver.FindElement(By.XPath("//input[@type='checkbox']"));
+        public static IWebElement checkBox => driver.FindElement(By.XPath("/html/body/div[1]/div[2]/div/div/div[3]/div[2]/span/span/div/div[1]/div/div/div[3]/input"));
         public static IWebElement deleteIcon => driver.FindElement(By.XPath("//div[@data-tooltip='Delete selection']"));
+        
         public static IWebElement selectAllIcon => driver.FindElement(By.XPath("//i[@class='mouse pointer icon']"));
         public static IWebElement markAsReadIcon => driver.FindElement(By.XPath("//i[@class='check square icon']"));
 
@@ -48,6 +49,7 @@ namespace AdvanceTask_NUnit.Pages
             seeAllElement.Click();
             Wait_Helpers.WaitToExist(driver, "XPath", "//input[@type='checkbox']", 10);
             selectAllIcon.Click();
+           // checkBox.Click();
             deleteIcon.Click();
             driver.Navigate().Refresh();
             Wait_Helpers.WaitToExist(driver, "XPath", "//div[2]/div/div/div[3]/div[2]/span/div", 10);

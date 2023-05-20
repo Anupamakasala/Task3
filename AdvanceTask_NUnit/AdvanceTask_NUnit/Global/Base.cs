@@ -17,10 +17,22 @@ namespace AdvanceTask_NUnit.Global
         public static IWebDriver driver;
 
         // Define other objects here        
+<<<<<<< HEAD
         public static string excelPath = @"D:\Advanced_Tasks\Task3\AdvanceTask_NUnit\AdvanceTask_NUnit\TestData\TestData.xlsx";
         public static ExtentReports extentReportObj = null;
         public static ExtentHtmlReporter htmlReporter;
         public static ExtentTest test;
+=======
+        public static string excelPath = @"C:\Users\Admin\Downloads\Nunit Advanced\Task3-Test-case-and-Condition-Skillshare\AdvanceTask_NUnit\AdvanceTask_NUnit\AdvanceTask_NUnit\TestData\TestData.xlsx";
+        public static ExtentReports extentReportObj = null;
+        public static ExtentHtmlReporter htmlReporter;
+        public static ExtentTest test;
+    
+
+
+
+
+>>>>>>> be38c4ae7b920d285aa4cebcf8d37f2f05f762c6
         static string reportPath = System.IO.Directory.GetParent(@"../../../").FullName +
         Path.DirectorySeparatorChar + "ExtentReports" +
         Path.DirectorySeparatorChar + "Result " + DateTime.Now.ToString("ddMMyyyy HHmmss");
@@ -39,8 +51,13 @@ namespace AdvanceTask_NUnit.Global
             driver.Manage().Window.Maximize();
             Wait_Helpers.wait(10);
                         
+<<<<<<< HEAD
             Login loginPageObj = new Login();
             loginPageObj.LoginSteps();
+=======
+           Login loginObj = new Login();
+           loginObj.LoginSteps();
+>>>>>>> be38c4ae7b920d285aa4cebcf8d37f2f05f762c6
 
         }
 
@@ -62,14 +79,22 @@ namespace AdvanceTask_NUnit.Global
 
 
 
-        [OneTimeTearDown]
-        public void Close()
-        {
+        //[OneTimeTearDown]
+        //public void Close()
+        //{
 
+<<<<<<< HEAD
+           // extentReportObj.Flush();
+=======
             extentReportObj.Flush();
+<<<<<<< HEAD
             driver.Quit();
+=======
+>>>>>>> origin/Jyoti-Branch
+           // driver.Quit();
+>>>>>>> be38c4ae7b920d285aa4cebcf8d37f2f05f762c6
 
-        }
+       // }
 
     }
 }

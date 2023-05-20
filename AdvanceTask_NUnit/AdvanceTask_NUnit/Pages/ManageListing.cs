@@ -25,7 +25,7 @@ namespace AdvanceTask_NUnit.Pages
         [FindsBy(How = How.XPath, Using = "//div[@class='active section']")]
         public IWebElement viewListing;
 
-        [FindsBy(How = How.XPath, Using = "//i[@class='outline write icon']")]
+        [FindsBy(How = How.XPath, Using = "/html/body/div/div/div/div[2]/div[1]/div[1]/table/tbody/tr[2]/td[8]/div/button[2]")]
         public IWebElement writeIcon;
 
         [FindsBy(How = How.Name, Using = "title")]
@@ -66,7 +66,8 @@ namespace AdvanceTask_NUnit.Pages
         {
             Wait_Helpers.WaitToExist(driver, "XPath", "//a[@href='/Home/ListingManagement']", 10);
             manageListingLink.Click();
-            Wait_Helpers.WaitToExist(driver, "XPath", "//i[@class='outline write icon']", 10);
+            Thread.Sleep(4000);
+            Wait_Helpers.WaitToExist(driver, "XPath", "/html/body/div/div/div/div[2]/div[1]/div[1]/table/tbody/tr[2]/td[8]/div/button[2]", 10);
             writeIcon.Click();
             Thread.Sleep(2000);
             titleTextbox.Clear();
@@ -96,7 +97,7 @@ namespace AdvanceTask_NUnit.Pages
         {
 
             Wait_Helpers.WaitToExist(driver, "XPath", "//div[2]/div[1]/div[1]/table/tbody/tr/td[3]", 10);
-            var manageLisitngTitle = driver.FindElement(By.XPath("//div[2]/div[1]/div[1]/table/tbody/tr/td[3]"));
+            var manageLisitngTitle = driver.FindElement(By.XPath("/html/body/div/div/div/div[2]/div[1]/div[1]/table/tbody/tr[2]/td[3]"));
             return manageLisitngTitle.Text;
             
         }

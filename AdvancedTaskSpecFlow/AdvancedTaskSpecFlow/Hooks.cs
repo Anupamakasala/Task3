@@ -14,16 +14,18 @@ namespace AdvancedTaskSpecFlow
         public static void login()
         {
             driver = new ChromeDriver();
+           
             LoginPage loginPageObj = new LoginPage();
+           
         }
 
 
 
-        [AfterTestRun]
-        public static void CloseBrowser()
-        {
-            driver.Close();
-        }
+        //[AfterTestRun]
+        //public static void CloseBrowser()
+        //{
+           // driver.Close();
+       // }
 
         [BeforeScenario("@tag1")]
         public static void BeforeScenarioWithTag()
