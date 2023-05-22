@@ -5,7 +5,19 @@ build_property.UsingMicrosoftNETSdkWeb =
 build_property.ProjectTypeGuids = 
 build_property.InvariantGlobalization = 
 build_property.PlatformNeutralAssembly = 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = AdvancedTaskSpecFlow
+build_property.ProjectDir = C:\Users\Admin\Downloads\Nunit Advanced\Task3-Test-case-and-Condition-Skillshare\AdvanceTask_NUnit\AdvancedTaskSpecFlow\AdvancedTaskSpecFlow\
+=======
+>>>>>>> be38c4ae7b920d285aa4cebcf8d37f2f05f762c6
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = AdvancedTaskSpecFlow
 build_property.ProjectDir = D:\Advanced_Tasks\Task3\AdvancedTaskSpecFlow\AdvancedTaskSpecFlow\
+<<<<<<< HEAD
+=======
+>>>>>>> a3d005d2022efff069c4bc113568f550c6c9fee6
+>>>>>>> be38c4ae7b920d285aa4cebcf8d37f2f05f762c6

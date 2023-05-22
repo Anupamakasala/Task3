@@ -88,22 +88,24 @@ namespace AdvanceTask_NUnit.Pages
         [FindsBy(How = How.XPath, Using = "//a[@href='/Home/ListingManagement']")]
         public IWebElement manageListingLink;
 
-        [FindsBy(How = How.XPath, Using = "//div[2]/div[1]/div[1]/table/tbody/tr[1]/td[3]")]
+        [FindsBy(How = How.XPath, Using = "/ html / body / div / div / div / div[2] / div[1] / div[1] / table / tbody / tr[2] / td[3]")]
         public IWebElement listTitle;
 
 
         //creating service listing
         public void AddShareSkill(string title, string description, string category, string subcategory,
-                                    string addtags, string serviceType, string locationType, string daysAvaialable, string beginDate,
+                                    string Tag1, string Tag2, string serviceType, string locationType, string daysAvaialable, string beginDate,
                                     string finishDate, string starttime, string endtime, string skilltrade, string skilltags, string charge,
                                     string active)
         {
             Wait_Helpers.WaitToExist(driver, "XPath", "//a[@class='ui basic green button']", 10);
             shareSkillButton.Click();
-            Thread.Sleep(2000);
+           
             titleTextbox.Click();
+            Thread.Sleep(5000);
             titleTextbox.SendKeys(title);
             descriptionTextbox.Click();
+            Thread.Sleep(2000);
             descriptionTextbox.SendKeys(description);
             // WaitHelpers.WaitToExists("Name", "categoryId", 6);
             categoryDropdownMenu.Click();
@@ -114,7 +116,8 @@ namespace AdvanceTask_NUnit.Pages
             SelectElement sSelect = new SelectElement(subcategoryDropDown);
             sSelect.SelectByText(subcategory);
             addTags.Click();
-            addTags.SendKeys(addtags);
+            addTags.SendKeys(Tag1);
+            addTags.SendKeys(Tag2);
             addTags.SendKeys(Keys.Enter);
 
 
@@ -208,15 +211,15 @@ namespace AdvanceTask_NUnit.Pages
 
 
 
-            attachFile.Click();
-            AutoItX3 autoIt = new AutoItX3();
-            autoIt.WinActivate("Open");
-            Thread.Sleep(2000);
-            autoIt.Send(@"C:\Lemon.jpg");
-            Thread.Sleep(2000);
-            autoIt.Send("{ENTER}");
-            Wait_Helpers.WaitToExist(driver, "XPath", "//input[@type='button'and@value='Save']", 5);
-            save.Click();
+            //attachFile.Click();
+            //AutoItX3 autoIt = new AutoItX3();
+            //autoIt.WinActivate("Open");
+            //Thread.Sleep(2000);
+            //autoIt.Send(@"C:\Users\Admin\OneDrive\Documents\Document.docx");
+            //Thread.Sleep(2000);
+            //autoIt.Send("{ENTER}");
+            //Wait_Helpers.WaitToExist(driver, "XPath", "//input[@type='button'and@value='Save']", 5);
+            //save.Click();
         }
 
            
@@ -224,8 +227,10 @@ namespace AdvanceTask_NUnit.Pages
             {
                 Wait_Helpers.WaitToExist(driver, "XPath", "//a[@href='/Home/ListingManagement']", 10);
                 manageListingLink.Click();
-                Wait_Helpers.WaitToExist(driver, "XPath", "//div[2]/div[1]/div[1]/table/tbody/tr[1]/td[3]", 10);
-                return listTitle.Text;
+
+                Wait_Helpers.WaitToExist(driver, "XPath", "/ html / body / div / div / div / div[2] / div[1] / div[1] / table / tbody / tr[2] / td[3]", 10);
+
+            return listTitle.Text;
                 
 
             }

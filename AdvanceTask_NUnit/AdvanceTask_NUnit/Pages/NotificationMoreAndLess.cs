@@ -26,6 +26,9 @@ namespace AdvanceTask_NUnit.Pages
         //show less to see less notifications
         private IWebElement ShowLess => driver.FindElement(By.XPath("//a[@class='ui button']"));
 
+        // Get the ShowLess Text on Notification Page
+
+
 
         public void LoadMoreNotification()
         {
@@ -41,9 +44,15 @@ namespace AdvanceTask_NUnit.Pages
             //Click on loadMore option to see all the notifications 
             wait(2);
             LoadMore.Click();
-
-
         }
+
+
+        public string GetShowLessText(IWebDriver driver)
+        {
+            return ShowLess.Text;
+        }
+
+            
 
         public void ShowLessNotification()
         {
@@ -51,6 +60,12 @@ namespace AdvanceTask_NUnit.Pages
             //Click on showless option to see onlylatest notifications
             Thread.Sleep(2000);
             ShowLess.Click();
+        }
+
+
+        public string GetLoadMoreText(IWebDriver driver)
+        {
+            return LoadMore.Text;
         }
     }
 }
