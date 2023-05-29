@@ -33,6 +33,8 @@ namespace AdvanceTask_NUnit.Pages
         IWebElement newUpdatedCertificate => driver.FindElement(By.XPath("//div[@data-tab='fourth']/div/div/div/table/tbody[last()]/tr/td[1]"));
         IWebElement deleteCertificateIcon => driver.FindElement(By.XPath("//div[@data-tab='fourth']/div/div[2]/div/table/tbody[last()]/tr/td[4]/span[2]/i"));
         IWebElement deletedCertificateText => driver.FindElement(By.XPath("//div[@class='form-wrapper']/table/tbody[last()]/tr[1]/td[1]"));
+        IWebElement msgError1 => driver.FindElement(By.XPath("//div[@class='ns-box-inner']"));
+
 
         //Add Certification            
 
@@ -75,7 +77,7 @@ namespace AdvanceTask_NUnit.Pages
         //Update Certificate Record
         public void UpdateCertificationSteps()
         {
-            //CertificationTab.Click();
+            //certificationTab.Click();
             Wait_Helpers.WaitToBeVisible(driver, "XPath", "//div[@data-tab='fourth']/div/div/div/table/tbody[last()]/tr/td[1]", 10);
             editCertificateIcon.Click();
             editCertificate.Clear();
@@ -110,7 +112,7 @@ namespace AdvanceTask_NUnit.Pages
         //Delete Certificate Record
         public void DeleteCertificate()
         {
-            certificationTab.Click();
+            //certificationTab.Click();
             Wait_Helpers.WaitToExist(driver, "XPath", "//div[@class='form-wrapper']/table/ tbody/tr/td[1]", 10);
             deleteCertificateIcon.Click();
             Thread.Sleep(5000);
@@ -122,6 +124,74 @@ namespace AdvanceTask_NUnit.Pages
             return deletedCertificateText.Text;
 
         }
+
+        //Duplicate record
+
+        public string Duplicate()
+        {
+            //certificationTab.Click();
+            Thread.Sleep(3000);
+            certAddNewButton.Click();
+            certificateTextbox.SendKeys(ExcelUtil.ReadData(2, "Certificate"));
+            certificatefromTextbox.SendKeys(ExcelUtil.ReadData(2, "From"));
+            SelectElement Certificateyear = new SelectElement(driver.FindElement(By.Name("certificationYear")));
+            Certificateyear.SelectByValue(ExcelUtil.ReadData(2, "Year"));
+            certificateAddButton.Click();
+            Thread.Sleep(3000);
+            return msgError1.Text;
+
+        }
+
+        //Negative Test cases
+
+        public string NegativeTestNoCert()
+        {
+            //certificationTab.Click();
+            Thread.Sleep(3000);
+            certAddNewButton.Click();
+            certificatefromTextbox.SendKeys(ExcelUtil.ReadData(4, "From"));
+            SelectElement Certificateyear = new SelectElement(driver.FindElement(By.Name("certificationYear")));
+            Certificateyear.SelectByValue(ExcelUtil.ReadData(4, "Year"));
+            certificateAddButton.Click();
+            Thread.Sleep(3000);
+            return msgError1.Text;
+
+        }
+
+        public string NegativeTestNoCertYear()
+        {
+            //certificationTab.Click();
+            Thread.Sleep(3000);
+            certAddNewButton.Click();
+            certificateTextbox.SendKeys(ExcelUtil.ReadData(5, "Certificate"));
+            certificatefromTextbox.SendKeys(ExcelUtil.ReadData(5, "From"));
+            certificateAddButton.Click();
+            Thread.Sleep(3000);
+            return msgError1.Text;
+        }
+
+        public string NegativeTestNone()
+        {
+            //certificationTab.Click();
+            Thread.Sleep(3000);
+            certAddNewButton.Click(); ;
+            certificateAddButton.Click();
+            Thread.Sleep(3000);
+            return msgError1.Text;
+        }
+
+        //More tests for Update
+
+        public string DuplicateUpdateCertificate()
+        {
+
+            //certificationTab.Click();
+            editCertificateIcon.Click();
+            Thread.Sleep(3000);
+            certificateUpdateButton.Click();
+            return msgError1.Text;
+        }
+
 
 
 
