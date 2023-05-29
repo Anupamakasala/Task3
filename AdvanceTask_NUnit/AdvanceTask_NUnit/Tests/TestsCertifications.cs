@@ -61,8 +61,131 @@ namespace AdvanceTask_NUnit.Tests
             }
 
         }
-
         [Test, Order(2)]
+        public void DuplicateCert()
+        {
+            try
+            {
+                certObj.ClickCertificationTab();
+                string actualmessage = certObj.Duplicate();
+                screenShotPath = GetScreenShot.Capture(driver, "ScreenShotName");
+                if (actualmessage == "This information is already exist.")
+                {
+                    Console.WriteLine(actualmessage);
+
+                    test = extentReportObj.CreateTest("Duplicate Certification", "Testing for the duplicating the certifictaion information").AddScreenCaptureFromPath(screenShotPath);
+                    test.Log(Status.Info, "Correct Error message is displayed when trying to duplicate the certificate");
+                    test.Log(Status.Pass, "Test to check the duplicate info- Failed");
+
+                    Assert.Pass("Correct error message");
+                }
+                else
+                {
+                    test = extentReportObj.CreateTest("Duplicate Certification", "Testing for the duplicating the certifictaion information").AddScreenCaptureFromPath(screenShotPath);
+                    test.Log(Status.Info, "Correct Error message is NOT displayed when trying to duplicate the certificate");
+                    test.Log(Status.Fail, "Test to check the duplicate info- Failed");
+                    Assert.Fail("Incorrect Message");
+                }
+            }
+            catch (Exception ex)
+            { Console.WriteLine(ex.StackTrace); }
+        }
+
+
+
+        [Test, Order(3)]
+        public void NegativeNoCertName()
+        {
+            try
+            {
+                certObj.ClickCertificationTab();
+                string actualmessage = certObj.NegativeTestNoCert();
+                screenShotPath = GetScreenShot.Capture(driver, "ScreenShotName");
+                if (actualmessage == "Please enter Certification Name,Certification From and Certification Year")
+                {
+                    Console.WriteLine(actualmessage);
+                    test = extentReportObj.CreateTest("No Certification name", "Testing by leaving the certification name empty").AddScreenCaptureFromPath(screenShotPath);
+                    test.Log(Status.Info, "Correct Error message is displayed when trying to leave the certificate name field empty");
+                    test.Log(Status.Pass, "Test Passed");
+                    Assert.Pass("Correct error");
+                }
+                else
+                {
+                    test = extentReportObj.CreateTest("No Certification name", "Testing by leaving the certification name empty").AddScreenCaptureFromPath(screenShotPath);
+                    test.Log(Status.Info, "Correct Error message is NOT displayed when trying to leave the certificate name field empty");
+                    test.Log(Status.Fail, "Test  Failed");
+                    Assert.Fail("Incorrect Message");
+                }
+            }
+
+            catch (Exception ex)
+            { Console.WriteLine(ex.StackTrace); }
+        }
+
+
+        [Test, Order(4)]
+        public void NegativeNoCertYear()
+        {
+            try
+            {
+                certObj.ClickCertificationTab();
+                string msgActual = certObj.NegativeTestNoCertYear();
+                screenShotPath = GetScreenShot.Capture(driver, "ScreenShotName");
+                Console.WriteLine(msgActual);
+                if (msgActual == "Please enter Certification Name, Certification From and Certification Year")
+                {
+                    Console.WriteLine(msgActual);
+                    test = extentReportObj.CreateTest("No Certification Year", "Testing by leaving the certification year field empty").AddScreenCaptureFromPath(screenShotPath);
+                    test.Log(Status.Info, "Correct Error message is displayed when trying to leave the certificate name field empty");
+                    test.Log(Status.Pass, "Test Passed");
+                    Assert.Pass("Correct error message ");
+                }
+                else
+                {
+                    Console.WriteLine(msgActual);
+                    test = extentReportObj.CreateTest("No Certification Year", "Testing by leaving the certification Year field empty").AddScreenCaptureFromPath(screenShotPath);
+                    test.Log(Status.Info, "Correct Error message is NOT displayed when trying to leave the certificate name field empty");
+                    test.Log(Status.Fail, "Test  Failed");
+                    Assert.Fail("Incorrect");
+                }
+            }
+            catch (Exception ex)
+            { Console.WriteLine(ex.StackTrace); }
+        }
+
+        [Test, Order(5)]
+        public void NegativeNone()
+        {
+            try
+            {
+                certObj.ClickCertificationTab();
+                string msgActual = certObj.NegativeTestNone();
+                Console.WriteLine(msgActual);
+                if (msgActual == "Please enter Certification Name, Certification From and Certification Year")
+                {
+                    Console.WriteLine(msgActual);
+                    test = extentReportObj.CreateTest("All fields left empty", "Testing by leaving all the certification fields empty").AddScreenCaptureFromPath(screenShotPath);
+                    test.Log(Status.Info, "Correct Error message is displayed");
+                    test.Log(Status.Pass, "Test Passed");
+                    Assert.Pass("Correct error message ");
+                }
+                else
+                {
+                    Console.WriteLine(msgActual);
+                    test = extentReportObj.CreateTest("No Certification Year", "Testing by leaving the certification Year field empty").AddScreenCaptureFromPath(screenShotPath);
+                    test.Log(Status.Info, "Correct Error message is NOT displayed");
+                    test.Log(Status.Fail, "Test  Failed");
+                    Assert.Fail("Incorrect");
+                }
+            }
+            catch (Exception ex)
+            { Console.WriteLine(ex.StackTrace); }
+        }
+
+
+
+
+        [Test,Order(6)]
         public void UpdateCertification()
         {
             
@@ -95,8 +218,39 @@ namespace AdvanceTask_NUnit.Tests
             }
         }
 
+        [Test, Order(7)]
+        public void DuplicateUpdateCert()
+        {
+            try
+            {
+                certObj.ClickCertificationTab();
+                string actualmessage = certObj.DuplicateUpdateCertificate();    
+                screenShotPath = GetScreenShot.Capture(driver, "ScreenShotName");
+                if (actualmessage == "This information is already exist.")
+                {
+                    Console.WriteLine(actualmessage);
 
-        [Test, Order(3)]
+                    test = extentReportObj.CreateTest("Duplicate Certification", "Testing for the duplicating the certifictaion information").AddScreenCaptureFromPath(screenShotPath);
+                    test.Log(Status.Info, "Correct Error message is displayed when trying to duplicate the certificate");
+                    test.Log(Status.Pass, "Test to check the duplicate info- Failed");
+
+                    Assert.Pass("Correct error message");
+                }
+                else
+                {
+                    test = extentReportObj.CreateTest("Duplicate Certification", "Testing for the duplicating the certifictaion information").AddScreenCaptureFromPath(screenShotPath);
+                    test.Log(Status.Info, "Correct Error message is NOT displayed when trying to duplicate the certificate");
+                    test.Log(Status.Fail, "Test to check the duplicate info- Failed");
+                    Assert.Fail("Incorrect Message");
+                }
+            }
+            catch (Exception ex)
+            { Console.WriteLine(ex.StackTrace); }
+        }
+
+
+
+        [Test,Order(8)]
         public void DeleteCertification()
         {
                     
@@ -104,7 +258,7 @@ namespace AdvanceTask_NUnit.Tests
             string originalUpdatedCertText = certObj.GetUpdatedCertificateFromExcel();
             screenShotPath = GetScreenShot.Capture(driver, "ScreenShotName");
 
-            
+            certObj.ClickCertificationTab();
             certObj.DeleteCertificate();
 
             //Verify Delete

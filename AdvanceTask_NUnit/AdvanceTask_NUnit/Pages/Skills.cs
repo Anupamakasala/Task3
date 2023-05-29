@@ -30,6 +30,8 @@ namespace AdvanceTask_NUnit.Pages
         IWebElement newUpdatedSkillLevel => driver.FindElement(By.XPath("//div[@data-tab='second']//table/tbody[last()]/tr/td[2]"));
         IWebElement deleteSkillIcon => driver.FindElement(By.XPath("//div[@data-tab='second']/div/div[2]/div/table/tbody[last()]/tr/td[3]/span[2]/i"));
         IWebElement deletedSkill => driver.FindElement(By.XPath("//div[@class='form-wrapper']/table/tbody[last()]/tr[1]/td[1]"));
+        //IWebElement msgError1 => driver.FindElement(By.XPath("//div[@class='ns-box-inner' and text()='Please enter skill and experience level'] "));
+        IWebElement msgError1 => driver.FindElement(By.XPath("//div[@class='ns-box-inner']"));
 
         //Wait for the AddNew button to be clickable
         public string wait0 = "//div[@data-tab='second']/div/div[2]/div/table/thead/tr/th[3]/div";
@@ -58,7 +60,7 @@ namespace AdvanceTask_NUnit.Pages
             skillAddButton.Click();
             Wait_Helpers.WaitToBeClickable(driver, "XPath", wait1, 5);
             skillTextbox.SendKeys(ExcelUtil.ReadData(2, "Skill"));
-            selectElement skillLevel = new SelectElement(driver.FindElement(By.Name("level")));
+            SelectElement skillLevel = new SelectElement(driver.FindElement(By.Name("level")));
             skillLevel.SelectByValue(ExcelUtil.ReadData(2, "SkillLevel"));
 
         }
@@ -137,16 +139,11 @@ namespace AdvanceTask_NUnit.Pages
             return updatedLevelFromExcel;
         }
 
-
-
-
-
-
         //Delete Skills
         public void DeleteSkillSteps()
 
         {
-            skillTab.Click();
+            //skillTab.Click();
             Wait_Helpers.WaitToBeClickable(driver, "XPath", wait3, 5);
             deleteSkillIcon.Click();
             Thread.Sleep(3000);
@@ -159,6 +156,75 @@ namespace AdvanceTask_NUnit.Pages
             return deletedSkill.Text;
 
         }
+
+
+        //Duplicate Skill
+        public string Duplicate()
+        {
+            //skillTab.Click();
+            Thread.Sleep(3000);
+
+            skillAddButton.Click();
+
+            skillTextbox.SendKeys(ExcelUtil.ReadData(2, "Skill"));
+            SelectElement SkillLevel = new SelectElement(driver.FindElement(By.Name("level")));
+            SkillLevel.SelectByValue(ExcelUtil.ReadData(2, "SkillLevel"));
+
+            skillAdd.Click();
+            Thread.Sleep(3000);
+            return msgError1.Text;
+
+        }
+        //Negative Tests
+        public string NegativeTestNoSkill()
+        {
+            //skillTab.Click();
+            Thread.Sleep(3000);
+
+            skillAddButton.Click();
+
+            //skillTextbox.SendKeys(ExcelUtil.ReadData(4, "Skill"));
+            SelectElement SkillLevel = new SelectElement(driver.FindElement(By.Name("level")));
+            SkillLevel.SelectByValue(ExcelUtil.ReadData(4, "SkillLevel"));
+
+            skillAdd.Click();
+            Thread.Sleep(3000);
+            return msgError1.Text;
+
+        }
+
+        public string NegativeTestNoSkillLevel()
+        {
+            //skillTab.Click();
+            Thread.Sleep(3000);
+            skillAddButton.Click();
+            skillTextbox.SendKeys(ExcelUtil.ReadData(5, "Skill"));            
+            skillAdd.Click();
+            Thread.Sleep(3000);
+            return msgError1.Text;
+        }
+
+        public string NegativeTestNone()
+        {
+            //skillTab.Click();
+            Thread.Sleep(3000);
+            skillAddButton.Click();
+            skillAdd.Click();
+            Thread.Sleep(3000);
+            return msgError1.Text;
+        }
+
+
+        public string DuplicateUpdateSkill()
+        {
+
+            //skillTab.Click();
+            editSkillIcon.Click();
+            Thread.Sleep(3000);
+            skillUpdateButton.Click();
+            return msgError1.Text;
+        }
+
 
 
     }
