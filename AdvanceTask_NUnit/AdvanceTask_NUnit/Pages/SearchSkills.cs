@@ -37,20 +37,29 @@ namespace AdvanceTask_NUnit.Pages
         IWebElement searchByUser => driver.FindElement(By.XPath("//*[@id=\"service-search-section\"]/div[2]/div/section/div/div[1]/div[3]/div[1]/div/div[1]/input"));
         IWebElement searchUserSearchIcon => driver.FindElement(By.XPath("//*[@id=\"service-search-section\"]/div[2]/div/section/div/div[1]/div[2]/i"));
 
-        IWebElement selectUser => driver.FindElement(By.XPath("//*[@id=\"service-search-section\"]/div[2]/div/section/div/div[1]/div[3]/div[1]/div/div[2]/div[1]/div/span"));
-
+        IWebElement selectUser => driver.FindElement(By.XPath("//*[@id=\"service-search-section\"]/div[2]/div/section/div/div[1]/div[3]/div[1]/div/div[2]/div[3]/div/span"));
+                                                                                                                   
         IWebElement refreshIcon => driver.FindElement(By.XPath("//*[@id=\"service-search-section\"]/div[2]/div/section/div/div[1]/div[3]/div[2]/button/i"));
 
 
         IWebElement onlineFilterBtn => driver.FindElement(By.XPath("//section[@class='search-results']//div[@class='four wide column']/div[@class= 'ui buttons']/button[contains(text(),'Online')]"));
+                                                                   
         IWebElement onsiteFilterBtn => driver.FindElement(By.XPath("//section[@class='search-results']//div[@class='four wide column']/div[@class= 'ui buttons']/button[contains(text(),'Onsite')]"));
         IWebElement showAllFilterBtn => driver.FindElement(By.XPath("//section[@class='search-results']//div[@class='four wide column']/div[@class= 'ui buttons']/button[contains(text(),'ShowAll')]"));
-
         IWebElement refineSearch => driver.FindElement(By.XPath("//*[@id=\"service-search-section\"]/div[2]/div/section/div/div[1]/div[1]/h3"));
+        IWebElement firstResultFilterSearch => driver.FindElement(By.XPath("//*[@id=\"service-search-section\"]/div[2]/div/section/div/div[2]/div/div[2]/div/div/div[1]/div[1]/a[2]/p"));
+        IWebElement firstResultFilterSearchOnsite => driver.FindElement(By.XPath("//*[@id=\"service-search-section\"]/div[2]/div/section/div/div[2]/div/div[2]/div/div/div/div[1]/a[2]/p"));                                                                 
+        IWebElement firstResultFilterSearchLocationType => driver.FindElement(By.XPath("//*[@id=\"service-detail-section\"]/div[2]/div/div[2]/div[1]/div[1]/div[2]/div[2]/div/div/div[3]/div/div[3]/div/div[2]"));
+        IWebElement anotherResultFilterSearch => driver.FindElement(By.XPath("//*[@id=\"service-search-section\"]/div[2]/div/section/div/div[2]/div/div[2]/div/div/div[8]/div[1]/a[2]/p"));
+                                                               
+        IWebElement anotherResultFilterSearchLocationType => driver.FindElement(By.XPath("//*[@id=\"service-detail-section\"]/div[2]/div/div[2]/div[1]/div[1]/div[2]/div[2]/div/div/div[3]/div/div[3]/div/div[2]"));
+                                                                                      
+        IWebElement pageCount18 => driver.FindElement(By.XPath("//*[@id=\"service-search-section\"]/div[2]/div/section/div/div[2]/div/div[1]/div/button[3]"));
+        IWebElement pageNumber4 => driver.FindElement(By.XPath("//*[@id=\"service-search-section\"]/div[2]/div/section/div/div[2]/div/div[3]/div[2]/div/button[5]"));
+
 
         public string waitSearchTextbox1 = "//div[@class = 'ui small icon input search-box']/input[@placeholder = 'Search skills']";
-
-        
+       
         public string waitBtn1 = "//section[@class='search-results']//div[@class='ui grid']//div[@class='twelve wide column']//div[@class='right floated column ']/button[1]";
         
         public string waitTextResultsPerPage = "//section[@class='search-results']//div[@class='ui grid']//div[@class='twelve wide column']//div[@class='right floated column ']/text()";
@@ -63,7 +72,7 @@ namespace AdvanceTask_NUnit.Pages
         public void SearchSkillSteps()
         {
             //Thread.Sleep(3000);            
-            Wait_Helpers.WaiToExist(driver, "XPath", waitSearchTextbox1, 20);
+            Wait_Helpers.WaitToExist(driver, "XPath", waitSearchTextbox1, 20);
             searchSkillTextbox.Click();
             searchSkillTextbox.SendKeys(ExcelUtil.ReadData(2, "SearchSkill"));           
 
@@ -72,35 +81,32 @@ namespace AdvanceTask_NUnit.Pages
             
         }
         public void ClickAllCat()
-        {
-           
+        {           
             allCategories.Click();
-            Wait_Helpers.WaiToExist(driver, "XPath", waitBtn1, 10);
+            Wait_Helpers.WaitToExist(driver, "XPath", waitBtn1, 10);
          }
 
         //Refine the search by a Category
         public void ClickCategory()
-        {
-           
+        {           
             programmingTech.Click();
-            Wait_Helpers.WaiToExist(driver, "XPath", waitBtn1, 10);
+            Wait_Helpers.WaitToExist(driver, "XPath", waitBtn1, 10);
         }
 
         //Refine the search by a Subcategory
         public void ClickSubCategory()
-        {
-           
+        {           
             qa.Click();
-            Wait_Helpers.WaiToExist(driver, "XPath", waitBtn1, 10);
+            Wait_Helpers.WaitToExist(driver, "XPath", waitBtn1, 10);
         }
 
         //Refine search by username
         public void UserSearch()
-        {
-            //Thread.Sleep(3000);
+        {            
             searchByUser.Click();
             searchByUser.SendKeys(ExcelUtil.ReadData(4, "SearchSkill"));
-            Wait_Helpers.WaiToExist(driver, "XPath", waitForUser, 10);
+            Wait_Helpers.WaitToExist(driver, "XPath", waitForUser, 10);
+            Thread.Sleep(2000);
             selectUser.Click();            
             Thread.Sleep(3000);
             
@@ -109,39 +115,69 @@ namespace AdvanceTask_NUnit.Pages
         //Refresh the search
         public void ClickRefresh()
         {
-            
             refreshIcon.Click();
         }
 
-
         //Search a  skill 
         public void ClickSearchSkillInner()
-        {
-            
+        {           
             search2.Click();
             search2.SendKeys(ExcelUtil.ReadData(3, "SearchSkill"));
             search2Icon.Click();
-            Wait_Helpers.WaiToExist(driver, "XPath", waitBtn1, 10);
+            Wait_Helpers.WaitToExist(driver, "XPath", waitBtn1, 10);
         }
 
-        //Refine the search by Filter
-        public void Filters()
+        //Refine the search by Filters and Validations for those
+        //Online Filter and it's validation
+        public string FilterOnline()
         {
-
-            
             onlineFilterBtn.Click();
-            
-            Wait_Helpers.WaiToExist(driver, "XPath", waitBtn1, 10);
-            
-            onsiteFilterBtn.Click();
-            Wait_Helpers.WaiToExist(driver, "XPath", waitBtn1, 10);
-            
-            showAllFilterBtn.Click();
-            Wait_Helpers.WaiToExist(driver, "XPath", waitBtn1, 10);
-
-
+            Wait_Helpers.WaitToExist(driver, "XPath", waitBtn1, 50);
+            //Thread.Sleep(2000);
+            firstResultFilterSearch.Click();
+            String locType = firstResultFilterSearchLocationType.Text;
+            driver.Navigate().Back();
+            return locType;
         }
 
+        //Onsite Filter and it's validation
+        public string FilterOnsite()
+        {            
+            onsiteFilterBtn.Click();
+            //Wait_Helpers.WaitToExist(driver, "XPath", waitBtn1, 10);
+            Thread.Sleep(7000);
+            firstResultFilterSearchOnsite.Click();
+            String locType2 = firstResultFilterSearchLocationType.Text;
+            driver.Navigate().Back();
+            return locType2;
+        }
+
+        //ShowAll Filter for Online and it's validation
+        public string FilterShowAll()
+        {            
+            showAllFilterBtn.Click();
+            Wait_Helpers.WaitToExist(driver, "XPath", waitBtn1, 10);
+            Thread.Sleep(2000);
+            firstResultFilterSearch.Click();
+            Thread.Sleep(2000);
+            String locType3 = firstResultFilterSearchLocationType.Text;
+            driver.Navigate().Back();     
+            return locType3;
+
+        }
+        //ShowAll Filter for Onsite and it's validation
+        public string FilterShowAll2()
+        {
+            showAllFilterBtn.Click();
+            Wait_Helpers.WaitToExist(driver, "XPath", waitBtn1, 10);
+            Thread.Sleep(1000);
+            anotherResultFilterSearch.Click();
+            String locType4 = anotherResultFilterSearchLocationType.Text;
+            driver.Navigate().Back();
+            return locType4;
+
+        }
+        //More Validations
         public string VerifySearch()
         {
             string refine = refineSearch.Text;
@@ -150,18 +186,16 @@ namespace AdvanceTask_NUnit.Pages
         public string BoldClickCategory()
         {
             string boldProgrammingTech = programmingTech.GetCssValue("font-weight");
-
             return boldProgrammingTech;
 
         }
-
         public string BoldClickSubCategory()
         {
             string boldQa = qa.GetCssValue("font-weight");
-
             return boldQa;
-
         }
+
+        
 
     }
 }
