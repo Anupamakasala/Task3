@@ -68,9 +68,10 @@ namespace AdvanceTask_NUnit.Global
         [OneTimeTearDown]
         public void Close()
         {
-
             extentReportObj.Flush();
             driver.Quit();
+            driver.Dispose();
+
 
         }
 

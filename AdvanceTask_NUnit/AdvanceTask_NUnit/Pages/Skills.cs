@@ -33,6 +33,11 @@ namespace AdvanceTask_NUnit.Pages
         //IWebElement msgError1 => driver.FindElement(By.XPath("//div[@class='ns-box-inner' and text()='Please enter skill and experience level'] "));
         IWebElement msgError1 => driver.FindElement(By.XPath("//div[@class='ns-box-inner']"));
 
+        IWebElement skillCancelButton => driver.FindElement(By.XPath("//input[@type='button' and @value='Cancel']"));
+        IWebElement skillCancelButtonForAdd => driver.FindElement(By.XPath("//input [@type ='button' and @value='Cancel']"));
+
+
+
         //Wait for the AddNew button to be clickable
         public string wait0 = "//div[@data-tab='second']/div/div[2]/div/table/thead/tr/th[3]/div";
         //Wait for the textbox to be clickable
@@ -144,9 +149,10 @@ namespace AdvanceTask_NUnit.Pages
 
         {
             //skillTab.Click();
-            Wait_Helpers.WaitToBeClickable(driver, "XPath", wait3, 5);
-            deleteSkillIcon.Click();
+            Wait_Helpers.WaitToBeClickable(driver, "XPath", wait3, 20);
             Thread.Sleep(3000);
+            deleteSkillIcon.Click();
+            //Thread.Sleep(3000);
         }
 
         //Validate Deleted Skill
@@ -172,6 +178,7 @@ namespace AdvanceTask_NUnit.Pages
 
             skillAdd.Click();
             Thread.Sleep(3000);
+            skillCancelButton.Click();
             return msgError1.Text;
 
         }
@@ -185,10 +192,10 @@ namespace AdvanceTask_NUnit.Pages
 
             //skillTextbox.SendKeys(ExcelUtil.ReadData(4, "Skill"));
             SelectElement SkillLevel = new SelectElement(driver.FindElement(By.Name("level")));
-            SkillLevel.SelectByValue(ExcelUtil.ReadData(4, "SkillLevel"));
-
+            SkillLevel.SelectByValue(ExcelUtil.ReadData(2, "SkillLevel"));
             skillAdd.Click();
             Thread.Sleep(3000);
+            skillCancelButtonForAdd.Click();
             return msgError1.Text;
 
         }
@@ -198,9 +205,10 @@ namespace AdvanceTask_NUnit.Pages
             //skillTab.Click();
             Thread.Sleep(3000);
             skillAddButton.Click();
-            skillTextbox.SendKeys(ExcelUtil.ReadData(5, "Skill"));
+            skillTextbox.SendKeys(ExcelUtil.ReadData(2, "Skill"));
             skillAdd.Click();
             Thread.Sleep(3000);
+            skillCancelButtonForAdd.Click();
             return msgError1.Text;
         }
 
@@ -211,17 +219,19 @@ namespace AdvanceTask_NUnit.Pages
             skillAddButton.Click();
             skillAdd.Click();
             Thread.Sleep(3000);
+            skillCancelButtonForAdd.Click();
             return msgError1.Text;
         }
 
 
         public string DuplicateUpdateSkill()
         {
-
+            Thread.Sleep(3000);
             //skillTab.Click();
             editSkillIcon.Click();
             Thread.Sleep(3000);
             skillUpdateButton.Click();
+            skillCancelButton.Click();
             return msgError1.Text;
         }
 

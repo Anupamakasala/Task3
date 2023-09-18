@@ -101,7 +101,7 @@ namespace AdvanceTask_NUnit.Tests
                 certObj.ClickCertificationTab();
                 string actualmessage = certObj.NegativeTestNoCert();
                 screenShotPath = GetScreenShot.Capture(driver, "ScreenShotName");
-                if (actualmessage == "Please enter Certification Name,Certification From and Certification Year")
+                if (actualmessage == "Please enter Certification Name, Certification From and Certification Year")
                 {
                     Console.WriteLine(actualmessage);
                     test = extentReportObj.CreateTest("No Certification name", "Testing by leaving the certification name empty").AddScreenCaptureFromPath(screenShotPath);
@@ -111,6 +111,7 @@ namespace AdvanceTask_NUnit.Tests
                 }
                 else
                 {
+                    Console.WriteLine(actualmessage);
                     test = extentReportObj.CreateTest("No Certification name", "Testing by leaving the certification name empty").AddScreenCaptureFromPath(screenShotPath);
                     test.Log(Status.Info, "Correct Error message is NOT displayed when trying to leave the certificate name field empty");
                     test.Log(Status.Fail, "Test  Failed");
@@ -134,7 +135,7 @@ namespace AdvanceTask_NUnit.Tests
                 Console.WriteLine(msgActual);
                 if (msgActual == "Please enter Certification Name, Certification From and Certification Year")
                 {
-                    Console.WriteLine(msgActual);
+                    
                     test = extentReportObj.CreateTest("No Certification Year", "Testing by leaving the certification year field empty").AddScreenCaptureFromPath(screenShotPath);
                     test.Log(Status.Info, "Correct Error message is displayed when trying to leave the certificate name field empty");
                     test.Log(Status.Pass, "Test Passed");
@@ -142,7 +143,7 @@ namespace AdvanceTask_NUnit.Tests
                 }
                 else
                 {
-                    Console.WriteLine(msgActual);
+                    
                     test = extentReportObj.CreateTest("No Certification Year", "Testing by leaving the certification Year field empty").AddScreenCaptureFromPath(screenShotPath);
                     test.Log(Status.Info, "Correct Error message is NOT displayed when trying to leave the certificate name field empty");
                     test.Log(Status.Fail, "Test  Failed");
@@ -163,7 +164,7 @@ namespace AdvanceTask_NUnit.Tests
                 Console.WriteLine(msgActual);
                 if (msgActual == "Please enter Certification Name, Certification From and Certification Year")
                 {
-                    Console.WriteLine(msgActual);
+                    
                     test = extentReportObj.CreateTest("All fields left empty", "Testing by leaving all the certification fields empty").AddScreenCaptureFromPath(screenShotPath);
                     test.Log(Status.Info, "Correct Error message is displayed");
                     test.Log(Status.Pass, "Test Passed");
@@ -171,7 +172,7 @@ namespace AdvanceTask_NUnit.Tests
                 }
                 else
                 {
-                    Console.WriteLine(msgActual);
+                    
                     test = extentReportObj.CreateTest("No Certification Year", "Testing by leaving the certification Year field empty").AddScreenCaptureFromPath(screenShotPath);
                     test.Log(Status.Info, "Correct Error message is NOT displayed");
                     test.Log(Status.Fail, "Test  Failed");
